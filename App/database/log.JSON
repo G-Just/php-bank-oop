@@ -1,0 +1,16 @@
+[
+  {
+    "userID": 0,
+    "action": "created account",
+    "accountID": 0,
+    "amount": 0,
+    "time": "idk yet"
+  },
+  {
+    "userID": 0,
+    "action": "deposited",
+    "accountID": 0,
+    "amount": 2.0,
+    "time": "idk yet"
+  }
+]
