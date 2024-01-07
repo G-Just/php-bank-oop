@@ -1,16 +1,30 @@
 [
   {
-    "userID": 0,
+    "id": 0,
     "action": "created account",
-    "accountID": 0,
-    "amount": 0,
-    "time": "idk yet"
+    "accountID": 8,
+    "time": "January, 07 @ 04:45",
+    "amount": 0
   },
   {
-    "userID": 0,
+    "id": 0,
     "action": "deposited",
-    "accountID": 0,
-    "amount": 2.0,
-    "time": "idk yet"
+    "accountID": 8,
+    "time": "January, 07 @ 04:48",
+    "amount": 5.25
+  },
+  {
+    "id": 0,
+    "action": "deposited",
+    "accountID": 8,
+    "time": "January, 07 @ 04:50",
+    "amount": 10
+  },
+  {
+    "id": 0,
+    "action": "withdrew",
+    "accountID": 8,
+    "time": "January, 07 @ 04:55",
+    "amount": 2.5
   }
 ]
