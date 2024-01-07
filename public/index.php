@@ -10,12 +10,12 @@ $log = $AccountData->LogShowAll();
 // $AccountData->create(['name' => "Test", 'lastName' => "Tester", 'number' => 'LT009999995641657700', 'personalCode' => '22723842328', 'balance' => 0]);
 ?>
 
-<div class="w-full flex flex-col gap-4">
-    <div class="text-center m-4 mb-0 bg-slate-800 rounded-lg shadow-lg min-h-96 p-8 pt-4">
-        <h1 class="font-bold text-2xl">Accounts</h1>
-        <div class="overflow-y-auto h-full">
-            <table class="w-full border-separate border-spacing-4 text-left">
-                <thead class="text-xl font-bold text-gray-500 sticky top-0 bg-slate-800">
+<div class="flex flex-col w-full gap-4">
+    <div class="p-8 pt-4 m-4 mb-0 text-center rounded-lg shadow-lg bg-slate-800 min-h-96">
+        <h1 class="text-2xl font-bold">Accounts</h1>
+        <div class="h-full overflow-y-auto">
+            <table class="w-full text-left border-separate border-spacing-4">
+                <thead class="sticky top-0 text-xl font-bold text-gray-500 bg-slate-800">
                     <th>Owner</th>
                     <th>Personal code</th>
                     <th>Account number</th>
@@ -25,7 +25,7 @@ $log = $AccountData->LogShowAll();
                 <tbody>
                     <?php
                     foreach ($accounts as $account) : ?>
-                        <tr class="font-bold tracking-wider w-full">
+                        <tr class="w-full font-bold tracking-wider">
                             <td><?= $account['lastName'] . ' ' . $account['name'] ?></td>
                             <td><?= $account['personalCode'] ?></td>
                             <td><?= $account['number'] ?></td>
@@ -36,9 +36,9 @@ $log = $AccountData->LogShowAll();
             </table>
         </div>
     </div>
-    <div class="flex min-h-80 m-4 mt-0 gap-4">
-        <div class="flex flex-col gap-8 text-center w-2/4 bg-slate-800 rounded-lg shadow-lg min-h-80 p-8 pt-4 overflow-hidden">
-            <h1 class="font-bold text-2xl sticky">Log</h1>
+    <div class="flex gap-4 m-4 mt-0 min-h-80">
+        <div class="flex flex-col w-2/4 gap-8 p-8 pt-4 overflow-hidden text-center rounded-lg shadow-lg bg-slate-800 min-h-80">
+            <h1 class="sticky text-2xl font-bold">Log</h1>
             <div class="flex flex-col-reverse gap-12 overflow-y-auto">
                 <?php foreach ($log as $entry) : ?>
                     <div class="flex gap-6 relative after:content-[''] after:absolute after:top-14 after:-bottom-10 after:left-6 after:w-px after:bg-gray-500">
@@ -71,14 +71,14 @@ $log = $AccountData->LogShowAll();
                                     } ?>
                                 </span>
                             </p>
-                            <p class="text-left text-sm text-gray-500"><?= $entry['time'] ?></p>
+                            <p class="text-sm text-left text-gray-500"><?= $entry['time'] ?></p>
                         </div>
                     </div>
                 <?php endforeach ?>
             </div>
         </div>
-        <div class="grid gap-8 text-center w-full bg-slate-800 rounded-lg shadow-lg p-8 pt-4 overflow-hidden">
-            <h1 class="font-bold text-2xl sticky">Statistics</h1>
+        <div class="grid w-full gap-8 p-8 pt-4 overflow-hidden text-center rounded-lg shadow-lg bg-slate-800">
+            <h1 class="sticky text-2xl font-bold">Statistics</h1>
             <div>Open accounts</div>
             <div>Registered Users</div>
             <div>Total holdings</div>
