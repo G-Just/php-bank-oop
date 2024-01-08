@@ -10,6 +10,7 @@
             <div class="flex flex-col items-start w-full gap-6 pl-8 mt-14">
                 <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="./"><img class="w-7 h-w-7" src="../public/img/home.svg" alt="">Home</a>
                 <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="./newAccount.php"><img class="w-7 h-w-7" src="../public/img/create.svg" alt="">Create account</a>
+                <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="./userList.php"><img class="w-7 h-w-7" src="../public/img/list.svg" alt="">User List</a>
             </div>
         </div>
         <div class="flex flex-col items-center">
