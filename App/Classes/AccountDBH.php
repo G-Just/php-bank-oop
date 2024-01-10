@@ -1,24 +1,24 @@
 <?php
 
-namespace App\Classes\AccountDataBaseHandler;
+namespace App\Classes;
 
-require __DIR__ . '/../../../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
-use App\Classes\_DB\DataBase;
+use App\Classes\DataBase;
 
-class AccountDataBaseHandler implements DataBase
+class AccountDBH implements DataBase
 {
     private $accounts;
     private $log;
     private function refreshData(): void
     {
-        $this->accounts = json_decode(file_get_contents(__DIR__ . '/../../database/data.JSON'), true);
-        $this->log = json_decode(file_get_contents(__DIR__ . '/../../database/log.JSON'), true);
+        $this->accounts = json_decode(file_get_contents(__DIR__ . '/../database/data.JSON'), true);
+        $this->log = json_decode(file_get_contents(__DIR__ . '/../database/log.JSON'), true);
     }
     private function writeData(array $accounts, array $log): void
     {
-        file_put_contents(__DIR__ . '/../../database/data.JSON', json_encode($accounts, JSON_PRETTY_PRINT));
-        file_put_contents(__DIR__ . '/../../database/log.JSON', json_encode($log, JSON_PRETTY_PRINT));
+        file_put_contents(__DIR__ . '/../database/data.JSON', json_encode($accounts, JSON_PRETTY_PRINT));
+        file_put_contents(__DIR__ . '/../database/log.JSON', json_encode($log, JSON_PRETTY_PRINT));
     }
     function create(array $userData): void
     {

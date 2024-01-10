@@ -6,7 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Classes\\AccountDataBaseHandler\\AccountDataBaseHandler' => $baseDir . '/App/Classes/AccountDataBaseHandler/AccountDataBaseHandler.php',
-    'App\\Classes\\DB\\DataBase' => $baseDir . '/App/Classes/DB/DataBase.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

@@ -1,5 +1,4 @@
 <body class="flex h-screen m-0 overflow-hidden text-white bg-slate-950">
-
     <div class="flex flex-col justify-between h-screen p-4 pb-20 border-r-2 min-w-80 bg-slate-900 border-neutral-700">
         <div class="flex flex-col items-center">
             <div class="text-center">
