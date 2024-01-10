@@ -15,6 +15,7 @@ class Router
         if (file_exists('../Controllers/' . $url[0] . '.php')) {
             $this->controller = $url[0] . 'Controller';
         } else {
+            // TODO: need to fix this so it returns the needed Controller, figure out how to use namespaces here
             return (new $this->controller)->index();
         }
     }
