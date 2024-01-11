@@ -2,21 +2,18 @@
 
 namespace App\Core;
 
-use App\Controllers;
+use App\Controllers\CreateAccountController;
+use App\Controllers\HomeController;
 
 class Router
 {
-    protected $controller = 'homeController';
-    protected $method = 'index';
-    protected $params = [];
-    public function __construct()
+    public static function route()
     {
         $url = explode('/', filter_var(str_replace('/BIT/php-u3/public/', '', $_SERVER['REQUEST_URI']), FILTER_SANITIZE_URL));
-        if (file_exists('../Controllers/' . $url[0] . '.php')) {
-            $this->controller = $url[0] . 'Controller';
-        } else {
-            // TODO: need to fix this so it returns the needed Controller, figure out how to use namespaces here
-            return (new $this->controller)->index();
-        }
+        return match ($url[0]) {
+            '', 'home' => (new HomeController)->index(),
+            'newAccount' => (new CreateAccountController)->index(),
+            default => '<h1>404 Page not found</h1>'
+        };
     }
 }

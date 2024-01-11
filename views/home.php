@@ -1,6 +1,6 @@
 <body>
     <div class="flex flex-col w-full gap-4">
-        <div class="p-8 pt-4 m-4 mb-0 text-center rounded-lg shadow-lg bg-slate-800 min-h-96">
+        <div class="flex-grow p-8 pt-4 m-4 mb-0 text-center rounded-lg shadow-lg bg-slate-800">
             <h1 class="text-2xl font-bold">Accounts</h1>
             <div class="h-full overflow-y-auto">
                 <table class="w-full text-left border-separate border-spacing-4">

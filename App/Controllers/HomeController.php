@@ -2,10 +2,13 @@
 
 namespace App\Controllers;
 
-class HomeController
+use App\Core\Controller;
+
+class HomeController extends Controller
 {
     public function index()
     {
-        return '<h1>Home</h1>';
+        $accounts = $this->model('HomeModel')->accounts;
+        return $this->view('home', $accounts);
     }
 }
