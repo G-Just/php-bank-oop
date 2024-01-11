@@ -14,9 +14,9 @@
         </div>
         <div class="flex flex-col items-center">
             <div class="flex flex-col items-start w-full gap-6 pl-8 mt-14">
-                <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="../public/login.php"><img class="w-7 h-w-7" src="../public/img/login.svg" alt="">Log In</a>
-                <a class="flex gap-4 text-2xl hover:text-slate-500" href="../public/logout.php"><img class="w-7 h-w-7" src="../public/img/logout.svg" alt="">Log Out</a>
-                <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="../public/register.php"><img class="w-7 h-w-7" src="../public/img/signup.svg" alt="">Sign Up</a>
+                <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="./login"><img class="w-7 h-w-7" src="../public/img/login.svg" alt="">Log In</a>
+                <a class="flex gap-4 text-2xl hover:text-slate-500" href="./logout"><img class="w-7 h-w-7" src="../public/img/logout.svg" alt="">Log Out</a>
+                <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="./register"><img class="w-7 h-w-7" src="../public/img/signup.svg" alt="">Sign Up</a>
             </div>
             <p class="mt-16 text-center text-gray-700">© 2024 "PHP bank"</p>
         </div>
