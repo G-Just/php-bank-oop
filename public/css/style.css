@@ -783,20 +783,12 @@ video {
   background-color: transparent;
 }
 
-.bg-\[url\(\'\.\/\.\.\/\.\.\/public\/img\/landscape2_dark\.jpg\'\)\] {
-  background-image: url('./../../public/img/landscape2_dark.jpg');
+.bg-\[url\(\'\.\.\/img\/landscape2_dark\.jpg\'\)\] {
+  background-image: url('../img/landscape2_dark.jpg');
 }
 
 .bg-\[url\(\'\/\.\.\/img\/landscape_dark\.jpg\'\)\] {
   background-image: url('/../img/landscape_dark.jpg');
-}
-
-.bg-\[url\(\'\.\/img\/landscape2_dark\.jpg\'\)\] {
-  background-image: url('./img/landscape2_dark.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/landscape2_dark\.jpg\'\)\] {
-  background-image: url('../img/landscape2_dark.jpg');
 }
 
 .bg-cover {

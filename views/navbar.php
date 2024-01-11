@@ -18,7 +18,7 @@
                 <a class="flex gap-4 text-2xl hover:text-slate-500" href="./logout"><img class="w-7 h-w-7" src="./img/logout.svg" alt="">Log Out</a>
                 <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="./register"><img class="w-7 h-w-7" src="./img/signup.svg" alt="">Sign Up</a>
             </div>
-            <p class="mt-16 text-center text-gray-700">© 2024 "PHP bank"</p>
+            <p class="mt-16 font-bold text-center text-gray-700">© 2024 "PHP bank"</p>
         </div>
     </div>
 </body>
