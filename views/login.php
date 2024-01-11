@@ -1,5 +1,5 @@
 <div class="flex items-center justify-center w-full h-full">
-    <div class="border-neutral-700 border-solid border-2 shadow-lg rounded-3xl flex w-4/5 bg-transparent h-5/6 bg-[url('./../../public/img/landscape_dark.jpg')] bg-cover bg-no-repeat">
+    <div class="border-neutral-700 border-solid border-2 shadow-lg rounded-3xl flex w-4/5 bg-transparent h-5/6 bg-[url('/../img/landscape_dark.jpg')] bg-cover bg-no-repeat">
         <div class="w-1/2 px-24 pt-20 bg-slate-900 rounded-3xl">
             <h1 class="m-4 text-4xl font-bold text-center">Log In</h1>
             <hr class="mb-24">
