@@ -1,5 +1,13 @@
 [
     {
+        "id": 99,
+        "name": "Admin",
+        "lastName": "Admin",
+        "number": "LT009999999999999999",
+        "personalCode": "99999999999",
+        "balance": 0
+    },
+    {
         "id": 0,
         "name": "John",
         "lastName": "Doe",
@@ -62,13 +70,5 @@
         "number": "LT009999908446872709",
         "personalCode": "50105120932",
         "balance": 97041.33
-    },
-    {
-        "id": 8,
-        "name": "Test",
-        "lastName": "Tester",
-        "number": "LT009999995641657700",
-        "personalCode": "22723842328",
-        "balance": 0
     }
 ]

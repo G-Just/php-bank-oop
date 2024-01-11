@@ -2,13 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Classes\DataBaseHandler;
 use App\Core\Controller;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $accounts = $this->model('HomeModel')->accounts;
-        return $this->view('home', $accounts);
+        $db = new DataBaseHandler('data');
+        $accounts = $db->showAll();
+        $log = $db->LogshowAll();
+        return $this->view('home', [$accounts, $log]);
     }
 }
