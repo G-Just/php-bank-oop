@@ -27,7 +27,7 @@
                 <h1 class="sticky text-2xl font-bold">Log</h1>
                 <div class="flex flex-col-reverse gap-12 overflow-y-auto">
                     <div class="flex gap-6 relative after:content-[''] after:absolute after:top-14 after:-bottom-10 after:left-6 after:w-px after:bg-gray-500">
-                        <img class="w-12 h-12 rounded-full" src="./img/pfp.jpg" alt="user pfp">
+                        <img class="w-12 h-12 rounded-full" src="img/pfp.jpg" alt="user pfp">
                         <div>
                             <p class="text-left">
                                 <span class="font-bold">Admin</span>
