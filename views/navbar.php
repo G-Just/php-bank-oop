@@ -8,8 +8,8 @@
             </div>
             <div class="flex flex-col items-start w-full gap-6 pl-8 mt-14">
                 <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="./"><img class="w-7 h-w-7" src="img/home.svg" alt="">Home</a>
-                <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="./newAccount"><img class="w-7 h-w-7" src="img/create.svg" alt="">Create account</a>
-                <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="./userList"><img class="w-7 h-w-7" src="img/list.svg" alt="">User List</a>
+                <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="./newaccount"><img class="w-7 h-w-7" src="img/create.svg" alt="">Create account</a>
+                <a class="flex gap-4 text-2xl hover:text-slate-500 hover:underline" href="./userlist"><img class="w-7 h-w-7" src="img/list.svg" alt="">User List</a>
             </div>
         </div>
         <div class="flex flex-col items-center">

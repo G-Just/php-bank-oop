@@ -4,10 +4,10 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 
-class CreateAccountController extends Controller
+class UserListController extends Controller
 {
     public function index()
     {
-        return $this->view('newaccount');
+        return $this->view('userlist');
     }
 }

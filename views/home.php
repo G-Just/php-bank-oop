@@ -29,15 +29,16 @@
                 <div class="flex flex-col-reverse overflow-y-auto gap-11">
                     <?php foreach ($data[1] as $entry) : ?>
                         <div class="flex gap-6 relative after:content-[''] after:absolute after:top-16 after:-bottom-11 after:left-7 after:w-px after:bg-gray-500">
-                            <img class="h-16 rounded-full w-h-16" src="img/<?= $entry['image'] ?>" alt="user pfp">
+                            <img class="h-16 rounded-full w-h-16" src="img/<?= $entry['image'] ?>" alt="action icon">
                             <div>
                                 <p class="text-left">
-                                    <span class="font-bold">Admin</span>
+                                    <span class="font-bold text-teal-600"><?= $entry['user'] ?></span>
                                     <?= $entry['action'] ?><br>
                                     <span class="font-bold">
                                         <?= $entry['account'] ?>
                                     </span>
-                                    <span class="font-bold"><?= '(' . $entry['name'] . ')' ?></span>
+                                    for
+                                    <span class="font-bold text-teal-600"><?= $entry['name'] ?></span>
                                 </p>
                                 <p class="text-sm text-left text-gray-500"><?= $entry['time'] ?></p>
                             </div>

@@ -6,6 +6,7 @@ use App\Controllers\CreateAccountController;
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
 use App\Controllers\RegisterController;
+use App\Controllers\UserListController;
 
 class Router
 {
@@ -15,9 +16,10 @@ class Router
         array_shift($url);
         return match ($url[0]) {
             '', 'home' => (new HomeController)->index(),
-            'newAccount' => (new CreateAccountController)->index(),
+            'newaccount' => (new CreateAccountController)->index(),
             'login' => (new LoginController)->index(),
             'register' => (new RegisterController)->index(),
+            'userlist' => (new UserListController)->index(),
             default => '<h1>404 Page not found</h1>'
         };
     }
