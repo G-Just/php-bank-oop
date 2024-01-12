@@ -10,4 +10,8 @@ class CreateAccountController extends Controller
     {
         return $this->view('newAccount');
     }
+    public function handlePost()
+    {
+        return $this->view('login');
+    }
 }

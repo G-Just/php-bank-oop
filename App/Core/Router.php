@@ -14,13 +14,22 @@ class Router
     {
         $url = explode('/', filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL));
         array_shift($url);
-        return match ($url[0]) {
-            '', 'home' => (new HomeController)->index(),
-            'new' => (new CreateAccountController)->index(),
-            'login' => (new LoginController)->index(),
-            'register' => (new RegisterController)->index(),
-            'users' => (new UserListController)->index(),
-            default => '<h1>404 Page not found</h1>'
-        };
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            return match ($url[0]) {
+                '', 'home' => (new HomeController)->index(),
+                'new' => (new CreateAccountController)->index(),
+                'login' => (new LoginController)->index(),
+                'register' => (new RegisterController)->index(),
+                'users' => (new UserListController)->index(),
+                default => '<h1>404 Page not found</h1>'
+            };
+        } else {
+            return match ($url[0]) {
+                'new' => (new CreateAccountController)->handlePost(),
+                'login' => (new LoginController)->handlePost(),
+                'register' => (new RegisterController)->handlePost(),
+                default => '<h1>404 Page not found</h1>'
+            };
+        }
     }
 }

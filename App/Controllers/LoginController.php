@@ -10,4 +10,8 @@ class LoginController extends Controller
     {
         return $this->view('login');
     }
+    public function handlePost()
+    {
+        header($this->model('LoginModel')->validate($_POST['email'], $_POST['password']));
+    }
 }

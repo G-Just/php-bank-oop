@@ -10,4 +10,8 @@ class RegisterController extends Controller
     {
         return $this->view('register');
     }
+    public function handlePost()
+    {
+        return $this->view('login');
+    }
 }
