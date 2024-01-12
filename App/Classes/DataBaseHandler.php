@@ -63,7 +63,7 @@ class DataBaseHandler implements DataBase
     {
         return $this->data;
     }
-    function LogshowAll(): array
+    function LogShowAll(): array
     {
         return $this->log;
     }

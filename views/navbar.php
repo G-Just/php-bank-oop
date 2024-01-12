@@ -2,7 +2,7 @@
     <div class="flex flex-col justify-between h-screen p-4 pb-2 border-r-2 min-w-80 bg-slate-900 border-neutral-700">
         <div class="flex flex-col items-center">
             <div class="text-center">
-                <img class="w-32 h-32" src="img/logo.svg" alt="logo">
+                <img class="w-32 h-32" src="img/deposit.svg" alt="logo">
                 <h1 class="text-2xl font-extrabold tracking-widest">PHP Bank</h1>
                 <h3 class="font-semibold leading-none text-teal-600">Financial institution</h1>
             </div>
