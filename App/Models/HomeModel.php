@@ -21,8 +21,8 @@ class HomeModel
             $this->formattedLog[] = [
                 'user' => $this->users->show($entry['id'])['username'],
                 'action' => match ($entry['action']) {
-                    'deposited' => 'deposited $' . $entry['amount'] . ' into account',
-                    'withdrew' => 'withdrew $' . $entry['amount'] . ' from account',
+                    'deposited' => "deposited <span class='font-bold text-teal-600'>$" . $entry['amount'] . '</span> into account',
+                    'withdrew' => "withdrew <span class='font-bold text-teal-600'>$" . $entry['amount'] . '</span> from account',
                     default => $entry['action']
                 },
                 'account' => $this->accounts->show($entry['accountID'])['number'],

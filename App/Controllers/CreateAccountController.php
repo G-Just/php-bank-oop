@@ -8,6 +8,6 @@ class CreateAccountController extends Controller
 {
     public function index()
     {
-        return $this->view('newaccount');
+        return $this->view('newAccount');
     }
 }

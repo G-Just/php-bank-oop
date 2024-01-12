@@ -16,10 +16,10 @@ class Router
         array_shift($url);
         return match ($url[0]) {
             '', 'home' => (new HomeController)->index(),
-            'newaccount' => (new CreateAccountController)->index(),
+            'new' => (new CreateAccountController)->index(),
             'login' => (new LoginController)->index(),
             'register' => (new RegisterController)->index(),
-            'userlist' => (new UserListController)->index(),
+            'users' => (new UserListController)->index(),
             default => '<h1>404 Page not found</h1>'
         };
     }
