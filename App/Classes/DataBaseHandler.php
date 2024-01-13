@@ -29,7 +29,7 @@ class DataBaseHandler implements DataBase
         }
         date_default_timezone_set("Europe/Vilnius");
         array_push($this->data, ['id' => $id] + $userData);
-        array_push($this->log, ['id' => 0, 'action' => 'created account', 'accountID' => $id, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
+        array_push($this->log, ['id' => $_SESSION['id'], 'action' => 'created account', 'accountID' => $id, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
     }
     function update(int $userId, array $userData): void
     {
@@ -40,7 +40,7 @@ class DataBaseHandler implements DataBase
                 $this->data[$key] = $userData;
             }
         }
-        array_push($this->log, ['id' => 0, 'action' => $action, 'accountID' => $userId, 'time' => date('Y F, d @ H:i'), 'amount' => $amount]);
+        array_push($this->log, ['id' => $_SESSION['id'], 'action' => $action, 'accountID' => $userId, 'time' => date('Y F, d @ H:i'), 'amount' => $amount]);
     }
     function delete(int $userId): void
     {
@@ -49,7 +49,7 @@ class DataBaseHandler implements DataBase
                 unset($this->data[$key]);
             }
         }
-        array_push($this->log, ['id' => 0, 'action' => 'deleted account', 'accountID' => $userId, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
+        array_push($this->log, ['id' => $_SESSION['id'], 'action' => 'deleted account', 'accountID' => $userId, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
     }
     function show(int $userId): array
     {

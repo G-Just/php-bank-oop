@@ -8,7 +8,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return $this->view('login');
+        return $this->view('login', [$_SESSION['error'] ?? '']);
     }
     public function handlePost()
     {

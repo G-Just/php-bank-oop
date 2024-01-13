@@ -14,9 +14,19 @@
         </div>
         <div class="flex flex-col items-center">
             <div class="flex flex-col items-start w-full gap-6 pl-8 mt-14">
-                <a class="flex gap-4 text-2xl hover:text-teal-600 hover:underline" href="./login"><img class="w-7 h-w-7" src="img/login.svg" alt="">Log In</a>
-                <a class="flex gap-4 text-2xl hover:text-teal-600" href="./logout"><img class="w-7 h-w-7" src="img/logout.svg" alt="">Log Out</a>
-                <a class="flex gap-4 text-2xl hover:text-teal-600 hover:underline" href="./register"><img class="w-7 h-w-7" src="img/signup.svg" alt="">Sign Up</a>
+                <?php if (isset($_SESSION['id'])) { ?>
+                    <div class="flex gap-4">
+                        <img class="w-20 h-20 rounded-full" src="img/pfp.jpg" alt="profile picture">
+                        <div>
+                            <h1 class="font-bold"><?= $_SESSION['username'] ?></h1>
+                            <h2 class="text-teal-600"><?= $_SESSION['role'] ?></h2>
+                            <a class="flex gap-2 text-xl hover:text-teal-600" href="./logout">Log Out<img class="w-7 h-w-7" src="img/logout.svg" alt=""></a>
+                        </div>
+                    </div>
+                <?php } else { ?>
+                    <a class="flex gap-4 text-2xl hover:text-teal-600 hover:underline" href="./login"><img class="w-7 h-w-7" src="img/login.svg" alt="">Log In</a>
+                    <a class="flex gap-4 text-2xl hover:text-teal-600 hover:underline" href="./register"><img class="w-7 h-w-7" src="img/signup.svg" alt="">Sign Up</a>
+                <?php } ?>
             </div>
             <p class="mt-16 text-sm font-bold text-center text-gray-700">© 2024 "PHP bank"</p>
         </div>

@@ -17,6 +17,7 @@ class Controller
         require ROOT . "views/navbar.php";
         require ROOT . "views/$view.php";
         $content = ob_get_clean();
+        unset($_SESSION['error']);
         return $content;
     }
 }

@@ -7,6 +7,7 @@ use App\Controllers\HomeController;
 use App\Controllers\LoginController;
 use App\Controllers\RegisterController;
 use App\Controllers\UserListController;
+use App\Controllers\SignOutController;
 
 class Router
 {
@@ -14,20 +15,25 @@ class Router
     {
         $url = explode('/', filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL));
         array_shift($url);
+        $controller = $url[0];
+        $method = $url[1] ?? 'index';
+        $params = $url[2] ?? [];
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            return match ($url[0]) {
-                '', 'home' => (new HomeController)->index(),
-                'new' => (new CreateAccountController)->index(),
-                'login' => (new LoginController)->index(),
-                'register' => (new RegisterController)->index(),
-                'users' => (new UserListController)->index(),
+            return match ($controller) {
+                '', 'home' => (new HomeController)->$method(),
+                'new' => (new CreateAccountController)->$method(),
+                'login' => (new LoginController)->$method(),
+                'register' => (new RegisterController)->$method(),
+                'logout' => (new SignOutController)->$method(),
+                'users' => (new UserListController)->$method(),
                 default => '<h1>404 Page not found</h1>'
             };
         } else {
-            return match ($url[0]) {
-                'new' => (new CreateAccountController)->handlePost(),
-                'login' => (new LoginController)->handlePost(),
-                'register' => (new RegisterController)->handlePost(),
+            $method = $url[1] ?? 'handlePost';
+            return match ($controller) {
+                'new' => (new CreateAccountController)->$method(),
+                'login' => (new LoginController)->$method(),
+                'register' => (new RegisterController)->$method(),
                 default => '<h1>404 Page not found</h1>'
             };
         }
