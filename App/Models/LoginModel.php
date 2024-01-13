@@ -10,6 +10,10 @@ class LoginModel
         $password = htmlspecialchars($password);
         $db = new DataBaseHandler('users');
         $users = $db->showAll();
+        if (strlen($email) === 0 || strlen($password) === 0) {
+            $_SESSION['error'] = 'Empty fields';
+            return 'Location: /login';
+        }
         foreach ($users as $user) {
             if ($user['email'] === $email) {
                 if (password_verify($password, $user['password'])) {

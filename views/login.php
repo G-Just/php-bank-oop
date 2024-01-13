@@ -3,7 +3,7 @@
         <div class="w-1/2 px-24 pt-20 bg-slate-950 rounded-3xl">
             <h1 class="m-4 text-4xl font-bold text-center">Log In</h1>
             <hr>
-            <div class="flex items-center justify-center h-24"><?= $data[0] ?></div>
+            <div class="flex items-center justify-center h-24 text-2xl text-red-500"><?= $data[0] ?></div>
             <form class="flex flex-col gap-8" action="" method="POST">
                 <input class="px-4 py-2 font-semibold text-slate-950 rounded-2xl" placeholder="Email Address" type="email" name="email">
                 <input class="px-4 py-2 font-semibold text-slate-950 rounded-2xl" placeholder="Password" type="password" name="password">
