@@ -12,6 +12,6 @@ class LoginController extends Controller
     }
     public function handlePost()
     {
-        header($this->model('LoginModel')->validate($_POST['email'], $_POST['password']));
+        header('Location: ' . $this->model('LoginModel')->validate($_POST['email'], $_POST['password']));
     }
 }

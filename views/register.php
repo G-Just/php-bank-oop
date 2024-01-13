@@ -9,7 +9,7 @@
                 <input class="px-4 py-2 font-semibold text-slate-950 rounded-2xl" placeholder="Email Address" type="email" name="email">
                 <input class="px-4 py-2 font-semibold text-slate-950 rounded-2xl" placeholder="Password" type="password" name="password">
                 <input class="px-4 py-2 font-semibold text-slate-950 rounded-2xl" placeholder="Confirm Password" type="password" name="confirmPassword">
-                <button class="p-4 bg-blue-700 rounded-3xl hover:bg-blue-500" type="submit">Sign up</button>
+                <button class="p-4 text-xl font-bold bg-blue-700 rounded-3xl hover:bg-blue-500" type="submit">Sign up</button>
                 <p class="text-center">Already have an account? <a class="underline hover:text-teal-600" href="/login">Log In</a></p>
             </form>
         </div>

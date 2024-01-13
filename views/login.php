@@ -7,7 +7,7 @@
             <form class="flex flex-col gap-8" action="" method="POST">
                 <input class="px-4 py-2 font-semibold text-slate-950 rounded-2xl" placeholder="Email Address" type="email" name="email">
                 <input class="px-4 py-2 font-semibold text-slate-950 rounded-2xl" placeholder="Password" type="password" name="password">
-                <button class="p-4 bg-blue-700 rounded-3xl hover:bg-blue-500" type="submit">Log In</button>
+                <button class="p-4 text-xl font-bold bg-blue-700 rounded-3xl hover:bg-blue-500" type="submit">Log In</button>
                 <p class="text-center">Don't have an account? <a class="underline hover:text-teal-600" href="/register">Sign Up</a></p>
             </form>
         </div>

@@ -16,24 +16,28 @@ class Router
         $url = explode('/', filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL));
         array_shift($url);
         $controller = $url[0];
-        $method = $url[1] ?? 'index';
+        if (method_exists($controller, $url[1] ?? 'index')) {
+            $method = $url[1] ?? 'index';
+        } else {
+            $method = 'index';
+        }
         $params = $url[2] ?? [];
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             return match ($controller) {
-                '', 'home' => (new HomeController)->$method(),
-                'new' => (new CreateAccountController)->$method(),
-                'login' => (new LoginController)->$method(),
-                'register' => (new RegisterController)->$method(),
-                'logout' => (new SignOutController)->$method(),
-                'users' => (new UserListController)->$method(),
+                '', 'home' => (new HomeController)->$method(...$params),
+                'new' => (new CreateAccountController)->$method(...$params),
+                'login' => (new LoginController)->$method(...$params),
+                'register' => (new RegisterController)->$method(...$params),
+                'logout' => (new SignOutController)->$method(...$params),
+                'users' => (new UserListController)->$method(...$params),
                 default => '<h1>404 Page not found</h1>'
             };
         } else {
             $method = $url[1] ?? 'handlePost';
             return match ($controller) {
-                'new' => (new CreateAccountController)->$method(),
-                'login' => (new LoginController)->$method(),
-                'register' => (new RegisterController)->$method(),
+                'new' => (new CreateAccountController)->$method(...$params),
+                'login' => (new LoginController)->$method(...$params),
+                'register' => (new RegisterController)->$method(...$params),
                 default => '<h1>404 Page not found</h1>'
             };
         }

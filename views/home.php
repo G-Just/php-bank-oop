@@ -57,7 +57,7 @@
                 <div class="flex flex-col overflow-y-auto gap-11">
                     <?php foreach ($data[1] as $entry) : ?>
                         <div class="flex gap-6 relative after:content-[''] after:absolute after:top-16 after:-bottom-11 after:left-7 after:w-px after:bg-gray-500">
-                            <img class="h-16 rounded-full w-h-16" src="img/<?= $entry['image'] ?>" alt="action icon">
+                            <img class="h-16 rounded-full w-h-16" src="<?= URL . 'img/' . $entry['image'] ?>" alt="action icon">
                             <div>
                                 <p class="text-left">
                                     <span class="font-bold text-teal-600"><?= $entry['user'] ?></span>
@@ -79,27 +79,27 @@
                 <div class="grid h-full grid-cols-3 gap-4 py-4">
                     <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
                         <h2 class="py-2 mb-6 text-2xl bg-red-400">Open accounts</h2>
-                        <p class="px-2 text-4xl font-bold"><?= $data[2][0]['accountCount'] ?></p>
+                        <p class="px-2 text-2xl font-bold"><?= $data[2][0]['accountCount'] ?></p>
                     </div>
                     <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
                         <h2 class="py-2 mb-6 text-2xl bg-orange-400">Registered Users</h2>
-                        <p class="px-2 text-4xl font-bold"><?= $data[2][0]['userCount'] ?></p>
+                        <p class="px-2 text-2xl font-bold"><?= $data[2][0]['userCount'] ?></p>
                     </div>
                     <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
                         <h2 class="py-2 mb-6 text-2xl bg-sky-700">Total holdings</h2>
-                        <p class="px-2 text-4xl font-bold"><?= '$' . number_format($data[2][0]['totalHoldings'], 2) ?></p>
+                        <p class="px-2 text-2xl font-bold"><?= '$' . number_format($data[2][0]['totalHoldings'], 2) ?></p>
                     </div>
                     <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
                         <h2 class="py-2 mb-6 text-2xl bg-emerald-700">Average balance</h2>
-                        <p class="px-2 text-4xl font-bold"><?= '$' . number_format($data[2][0]['averageHoldings'], 2) ?></p>
+                        <p class="px-2 text-2xl font-bold"><?= '$' . number_format($data[2][0]['averageHoldings'], 2) ?></p>
                     </div>
                     <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
                         <h2 class="py-2 mb-6 text-2xl bg-purple-500">Min balance</h2>
-                        <p class="px-2 text-4xl font-bold"><?= '$' . number_format($data[2][0]['minHoldings'], 2) ?></p>
+                        <p class="px-2 text-2xl font-bold"><?= '$' . number_format($data[2][0]['minHoldings'], 2) ?></p>
                     </div>
                     <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
                         <h2 class="py-2 mb-6 text-2xl bg-indigo-800">Max balance</h2>
-                        <p class="px-2 text-4xl font-bold"><?= '$' . number_format($data[2][0]['maxHoldings'], 2) ?></p>
+                        <p class="px-2 text-2xl font-bold"><?= '$' . number_format($data[2][0]['maxHoldings'], 2) ?></p>
                     </div>
                 </div>
             </div>

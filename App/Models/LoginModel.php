@@ -12,7 +12,7 @@ class LoginModel
         $users = $db->showAll();
         if (strlen($email) === 0 || strlen($password) === 0) {
             $_SESSION['error'] = 'Empty fields';
-            return 'Location: /login';
+            return '/login';
         }
         foreach ($users as $user) {
             if ($user['email'] === $email) {
@@ -24,14 +24,14 @@ class LoginModel
                     $_SESSION['actions'] = $user['actions'];
                     $_SESSION['created'] = $user['created'];
                     $_SESSION['error'];
-                    return 'Location: /';
+                    return '/';
                 } else {
                     $_SESSION['error'] = 'Wrong password';
-                    return 'Location: /login';
+                    return '/login';
                 }
             }
         }
         $_SESSION['error'] = 'Email does not exist';
-        return 'Location: /login';
+        return '/login';
     }
 }
