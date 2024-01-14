@@ -26,5 +26,12 @@
         "accountID": 0,
         "time": "January, 07 @ 04:55",
         "amount": 2.5
+    },
+    {
+        "id": 0,
+        "action": "created account",
+        "accountID": 8,
+        "time": "2024 January, 14 @ 13:07",
+        "amount": 0
     }
 ]

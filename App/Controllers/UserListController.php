@@ -12,7 +12,7 @@ class UserListController extends Controller
         if (isset($_SESSION['id'])) {
             $db = new DataBaseHandler('users');
             $users = $db->showAll();
-            return $this->view('userlist', [$users]);
+            return $this->view('userlist', ['users' => $users]);
         } else {
             $_SESSION['error'] = 'Login to gain access to all features';
             header('Location: /login');

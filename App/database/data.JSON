@@ -62,5 +62,13 @@
         "number": "LT009999908446872709",
         "personalCode": "50105120932",
         "balance": 97041.33
+    },
+    {
+        "id": 8,
+        "name": "Test",
+        "lastName": "Tester",
+        "number": "LT009999960981370919",
+        "personalCode": "39006088921",
+        "balance": 0
     }
 ]

@@ -11,7 +11,7 @@ class CreateAccountModel
         $this->db = new DataBaseHandler('data');
         $this->number = $this->generateNumber();
     }
-    public function validate($name, $lastName, $code): void
+    public function validate($name, $lastName, $code)
     {
         $name = htmlspecialchars($name);
         $lastName = htmlspecialchars($lastName);
@@ -32,7 +32,7 @@ class CreateAccountModel
         $this->db->create(['name' => $name, 'lastName' => $lastName, 'number' => $this->number, 'personalCode' => $code, 'balance' => 0]);
         return header('Location: /');
     }
-    private function codeValidation($code): bool
+    private function codeValidation($code)
     {
         if (strlen($code) === 11) {
             if ($code[0] >= 1 && $code[0] <= 6) {
@@ -54,7 +54,7 @@ class CreateAccountModel
         $_SESSION['error'] = 'Invalid personal code';
         return false;
     }
-    private function lengthValidation($name, $lastName): bool
+    private function lengthValidation($name, $lastName)
     {
         if (strlen($name) < 3 || strlen($lastName) < 3) {
             $_SESSION['error'] = 'Name and Last name should be at least 3 characters long';
@@ -62,7 +62,7 @@ class CreateAccountModel
         }
         return true;
     }
-    private function duplicateCheck($code): bool
+    private function duplicateCheck($code)
     {
         foreach ($this->db->showAll() as $account) {
             if ($account['personalCode'] === $code) {
@@ -72,7 +72,7 @@ class CreateAccountModel
         }
         return true;
     }
-    private function generateNumber(): string
+    private function generateNumber()
     {
         $number = '';
         foreach (range(1, 11) as $digit) {

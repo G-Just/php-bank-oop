@@ -27,7 +27,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($data[0] as $user) : ?>
+                        <?php foreach ($data['users'] as $user) : ?>
                             <tr>
                                 <td class="px-5 py-5 text-sm border-b border-neutral-600 bg-slate-900">
                                     <div class="flex items-center">

@@ -11,7 +11,7 @@ class LoginController extends Controller
         if (isset($_SESSION['id'])) {
             header('Location: /');
         } else {
-            return $this->view('login', [$_SESSION['error'] ?? '']);
+            return $this->view('login', ['error' => $_SESSION['error'] ?? '']);
         }
     }
     public function handlePost()

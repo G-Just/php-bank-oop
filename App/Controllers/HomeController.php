@@ -12,6 +12,6 @@ class HomeController extends Controller
         $accounts = $model->accounts->showAll();
         $log = array_reverse($model->getLog());
         $stats = $model->getStats();
-        return $this->view('home', [$accounts, $log, $stats]);
+        return $this->view('home', ['accounts' => $accounts, 'log' => $log, 'stats' => $stats]);
     }
 }

@@ -10,7 +10,7 @@ class CreateAccountController extends Controller
     {
         if (isset($_SESSION['id'])) {
             $number = $this->model('CreateAccountModel')->number;
-            return $this->view('newAccount', [$number, $_SESSION['error'] ?? '']);
+            return $this->view('newAccount', ['number' => $number, 'error' => $_SESSION['error'] ?? '']);
         } else {
             $_SESSION['error'] = 'Login to gain access to all features';
             header('Location: /login');
