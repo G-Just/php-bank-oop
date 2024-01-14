@@ -6,13 +6,13 @@
         </div>
         <div class="grid w-full h-full grid-cols-2">
             <div class="flex flex-col items-center gap-8 border-r-2 border-slate-600">
-                <div class="flex items-center justify-center h-24 text-2xl text-red-500"><?= $data[1] ?></div>
+                <div class="flex items-center justify-center h-24 text-2xl text-center text-red-500"><?= $data[1] ?></div>
                 <form class="flex flex-col w-full gap-8 px-10" action="" method="POST">
                     <input type="hidden" name="number" value="<?= $data[0] ?>">
                     <input class="px-4 py-2 font-semibold text-slate-950 rounded-2xl" placeholder="Name" type="text" name="name">
                     <input class="px-4 py-2 font-semibold text-slate-950 rounded-2xl" placeholder="Last name" type="text" name="lastName">
                     <input class="px-4 py-2 font-semibold text-slate-950 rounded-2xl" placeholder="Personal Code" type="number" name="personalCode">
-                    <button class="p-4 text-xl font-bold bg-blue-700 rounded-3xl hover:bg-blue-500" type="submit" type="submit">Create</button>
+                    <button class="p-4 text-xl font-bold bg-blue-700 rounded-3xl hover:bg-blue-500" type="submit">Create</button>
                 </form>
             </div>
             <div class="relative flex items-center justify-center text-sm">

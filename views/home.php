@@ -22,7 +22,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($data[0] as $user) : ?>
-                            <tr class="cursor-pointer hover:bg-slate-900">
+                            <tr onclick="window.location=`/account/dashboard/<?= $user['id'] ?>`;" class="cursor-pointer hover:bg-slate-900">
                                 <td class="px-5 py-5 text-lg border-b border-neutral-600x">
                                     <div class="flex items-center">
                                         <div>
@@ -78,27 +78,27 @@
                 <h1 class="mb-2 text-2xl font-bold">Statistics</h1>
                 <div class="grid h-full grid-cols-3 gap-4 py-4">
                     <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
-                        <h2 class="py-2 mb-6 text-2xl bg-red-400">Open accounts</h2>
+                        <h2 class="py-2 mb-6 text-2xl bg-slate-900">Open accounts</h2>
                         <p class="px-2 text-2xl font-bold"><?= $data[2][0]['accountCount'] ?></p>
                     </div>
                     <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
-                        <h2 class="py-2 mb-6 text-2xl bg-orange-400">Registered Users</h2>
+                        <h2 class="py-2 mb-6 text-2xl bg-slate-900">Registered Users</h2>
                         <p class="px-2 text-2xl font-bold"><?= $data[2][0]['userCount'] ?></p>
                     </div>
                     <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
-                        <h2 class="py-2 mb-6 text-2xl bg-sky-700">Total holdings</h2>
+                        <h2 class="py-2 mb-6 text-2xl bg-slate-900">Total holdings</h2>
                         <p class="px-2 text-2xl font-bold"><?= '$' . number_format($data[2][0]['totalHoldings'], 2) ?></p>
                     </div>
                     <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
-                        <h2 class="py-2 mb-6 text-2xl bg-emerald-700">Average balance</h2>
+                        <h2 class="py-2 mb-6 text-2xl bg-slate-900">Average balance</h2>
                         <p class="px-2 text-2xl font-bold"><?= '$' . number_format($data[2][0]['averageHoldings'], 2) ?></p>
                     </div>
                     <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
-                        <h2 class="py-2 mb-6 text-2xl bg-purple-500">Min balance</h2>
+                        <h2 class="py-2 mb-6 text-2xl bg-slate-900">Min balance</h2>
                         <p class="px-2 text-2xl font-bold"><?= '$' . number_format($data[2][0]['minHoldings'], 2) ?></p>
                     </div>
                     <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
-                        <h2 class="py-2 mb-6 text-2xl bg-indigo-800">Max balance</h2>
+                        <h2 class="py-2 mb-6 text-2xl bg-slate-900">Max balance</h2>
                         <p class="px-2 text-2xl font-bold"><?= '$' . number_format($data[2][0]['maxHoldings'], 2) ?></p>
                     </div>
                 </div>

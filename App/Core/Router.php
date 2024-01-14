@@ -2,6 +2,7 @@
 
 namespace App\Core;
 
+use App\Controllers\AccountController;
 use App\Controllers\CreateAccountController;
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
@@ -16,12 +17,8 @@ class Router
         $url = explode('/', filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL));
         array_shift($url);
         $controller = $url[0];
-        if (method_exists($controller, $url[1] ?? 'index')) {
-            $method = $url[1] ?? 'index';
-        } else {
-            $method = 'index';
-        }
-        $params = $url[2] ?? [];
+        $method = $url[1] ?? 'index';
+        $params = array_slice($url, 2) ?? [];
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             return match ($controller) {
                 '', 'home' => (new HomeController)->$method(...$params),
@@ -30,6 +27,7 @@ class Router
                 'register' => (new RegisterController)->$method(...$params),
                 'logout' => (new SignOutController)->$method(...$params),
                 'users' => (new UserListController)->$method(...$params),
+                'account' => (new AccountController)->$method(...$params),
                 default => '<h1>404 Page not found</h1>'
             };
         } else {

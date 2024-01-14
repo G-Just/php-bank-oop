@@ -61,10 +61,7 @@ class CreateAccountModel
             $_SESSION['error'] = 'Name and Last name should be at least 3 characters long';
             return false;
         }
-        if (strlen($name) < 13 || strlen($lastName) < 13) {
-            $_SESSION['error'] = 'Name and Last name should be shorter than 13 characters';
-            return false;
-        }
+        return true;
     }
     private function duplicateCheck($code)
     {
@@ -74,6 +71,7 @@ class CreateAccountModel
                 return false;
             }
         }
+        return true;
     }
     private function generateNumber()
     {
