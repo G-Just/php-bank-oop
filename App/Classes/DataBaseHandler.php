@@ -15,7 +15,7 @@ class DataBaseHandler implements DataBase
         $this->data = json_decode(file_get_contents(__DIR__ . '/../database/' . $this->database . '.JSON'), true);
         $this->log = json_decode(file_get_contents(__DIR__ . '/../database/log.JSON'), true);
     }
-    public function __destruct()
+    private function push()
     {
         file_put_contents(__DIR__ . '/../database/' . $this->database . '.JSON', json_encode($this->data, JSON_PRETTY_PRINT));
         file_put_contents(__DIR__ . '/../database/log.JSON', json_encode($this->log, JSON_PRETTY_PRINT));
@@ -30,17 +30,20 @@ class DataBaseHandler implements DataBase
         date_default_timezone_set("Europe/Vilnius");
         array_push($this->data, ['id' => $id] + $userData);
         array_push($this->log, ['id' => $_SESSION['id'], 'action' => 'created account', 'accountID' => $id, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
+        $this->push();
     }
     function update(int $userId, array $userData): void
     {
-        foreach ($this->data as $key => $user) {
-            if ($userId === $user['id']) {
-                $amount = $user['balance'] - $userData['balance'];
-                $action = $amount > 0 ? 'deposited' : 'withdrew';
+        $user = $this->show($userId);
+        $amount = $user['balance'] - $userData['balance'];
+        $action = $amount < 0 ? 'deposited' : 'withdrew';
+        foreach ($this->data as $key => $value) {
+            if ($value['id'] === $userId) {
                 $this->data[$key] = $userData;
             }
         }
-        array_push($this->log, ['id' => $_SESSION['id'], 'action' => $action, 'accountID' => $userId, 'time' => date('Y F, d @ H:i'), 'amount' => $amount]);
+        array_push($this->log, ['id' => $_SESSION['id'], 'action' => $action, 'accountID' => $userId, 'time' => date('Y F, d @ H:i'), 'amount' => abs($amount)]);
+        $this->push();
     }
     function delete(int $userId): void
     {
@@ -50,6 +53,7 @@ class DataBaseHandler implements DataBase
             }
         }
         array_push($this->log, ['id' => $_SESSION['id'], 'action' => 'deleted account', 'accountID' => $userId, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
+        $this->push();
     }
     function show(int $userId): array
     {
@@ -66,13 +70,5 @@ class DataBaseHandler implements DataBase
     function LogShowAll(): array
     {
         return $this->log;
-    }
-    private function sortByLastName($a, $b)
-    {
-        if (($a->lastName <=> $b->lastName) === 0) {
-            return $a->name <=> $b->name;
-        } else {
-            return $a->lastName <=> $b->lastName;
-        }
     }
 }

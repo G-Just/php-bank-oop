@@ -12,20 +12,28 @@ class AccountController extends Controller
     {
         $this->db = new DataBaseHandler('data');
     }
-    public function dashboard($account)
+    public function dashboard($accountId)
     {
-        return $this->view('account', ['account' => $this->db->show($account)]);
+        return $this->view('account', ['account' => $this->db->show($accountId)]);
     }
-    public function deposit($account)
+    public function deposit($accountId)
     {
-        return $this->view('deposit', ['account' => $this->db->show($account)]);
+        return $this->view('deposit', ['account' => $this->db->show($accountId)]);
     }
-    public function withdraw($account)
+    public function withdraw($accountId)
     {
-        return $this->view('withdraw', ['account' => $this->db->show($account)]);
+        return $this->view('withdraw', ['account' => $this->db->show($accountId)]);
     }
-    public function delete($account)
+    public function delete($accountId)
     {
-        return $this->view('delete', ['account' => $this->db->show($account)]);
+        return $this->view('delete', ['account' => $this->db->show($accountId)]);
+    }
+    public function handleDeposit($accountId)
+    {
+        return $this->model('DepositModel')->deposit($accountId);
+    }
+    public function handleWithdrawal($accountId)
+    {
+        return $this->model('WithdrawModel')->withdraw($accountId);
     }
 }

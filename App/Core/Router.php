@@ -36,6 +36,7 @@ class Router
                 'new' => (new CreateAccountController)->$method(...$params),
                 'login' => (new LoginController)->$method(...$params),
                 'register' => (new RegisterController)->$method(...$params),
+                'account' => (new AccountController)->$method(...$params),
                 default => '<h1>404 Page not found</h1>'
             };
         }
