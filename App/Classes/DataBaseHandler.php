@@ -42,7 +42,7 @@ class DataBaseHandler implements DataBase
                 $this->data[$key] = $userData;
             }
         }
-        array_push($this->log, ['id' => $_SESSION['id'], 'action' => $action, 'accountID' => $userId, 'time' => date('Y F, d @ H:i'), 'amount' => abs($amount)]);
+        array_push($this->log, ['id' => $_SESSION['id'], 'action' => $action, 'accountID' => $userId, 'time' => date('Y F, d @ H:i'), 'amount' => round(abs($amount), 2)]);
         $this->push();
     }
     function delete(int $userId): void
