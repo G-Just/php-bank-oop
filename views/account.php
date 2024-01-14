@@ -18,7 +18,6 @@
                 <hr class="w-60 border-px">
                 <h1 class="text-8xl"><?= '$' . number_format($data[0]['balance'], 2) ?></h1>
                 <div>
-                    <!-- TODO: style these buttons and work on logic -->
                     <a href=<?= URL . 'account/deposit/' . $data[0]['id'] ?>>Deposit</a>
                     <a href=<?= URL . 'account/withdraw/' . $data[0]['id'] ?>>Withdraw</a>
                     <a href=<?= URL . 'account/delete/' . $data[0]['id'] ?>>Delete</a>

@@ -51,7 +51,7 @@
                 </table>
             </div>
         </div>
-        <div class="flex gap-4 m-4 mt-0 min-h-80">
+        <div class="flex gap-4 m-4 mt-0 max-h-96 min-h-96">
             <div class="flex flex-col w-2/4 gap-8 p-8 pt-4 overflow-hidden text-center rounded-lg shadow-lg bg-slate-800 min-h-80">
                 <h1 class="sticky text-2xl font-bold">Log</h1>
                 <div class="flex flex-col overflow-y-auto gap-11">

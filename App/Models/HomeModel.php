@@ -8,14 +8,15 @@ class HomeModel
 {
     private $formattedLog = [];
     private $stats = [];
-    private $accounts, $users, $log;
+    private $users, $log;
+    public $accounts;
     public function __construct()
     {
         $this->accounts = new DataBaseHandler('data');
         $this->users = new DataBaseHandler('users');
         $this->log = $this->users->LogShowAll();
     }
-    public function getLog()
+    public function getLog(): array
     {
         foreach ($this->log as $entry) {
             $this->formattedLog[] = [
@@ -37,7 +38,7 @@ class HomeModel
         }
         return $this->formattedLog;
     }
-    public function getStats()
+    public function getStats(): array
     {
         $sum = [];
         foreach ($this->accounts->showAll() as $account) {

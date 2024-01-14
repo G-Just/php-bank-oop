@@ -22,9 +22,6 @@
                                 Created
                             </th>
                             <th class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase border-b-2 border-neutral-600 bg-slate-800">
-                                Actions
-                            </th>
-                            <th class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase border-b-2 border-neutral-600 bg-slate-800">
                                 Status
                             </th>
                         </tr>
@@ -50,11 +47,6 @@
                                 <td class="px-5 py-5 text-sm border-b border-neutral-600 bg-slate-900">
                                     <p class="text-white whitespace-no-wrap">
                                         <?= $user['created'] ?>
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 text-sm border-b border-neutral-600 bg-slate-900">
-                                    <p class="text-white whitespace-no-wrap">
-                                        <?= $user['actions'] ?>
                                     </p>
                                 </td>
                                 <td class="px-5 py-5 text-sm border-b border-neutral-600 bg-slate-900">

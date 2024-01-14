@@ -8,6 +8,7 @@ class SignOutController extends Controller
 {
     public function index()
     {
-        header($this->model('SignOutModel')->signOut());
+        session_unset();
+        header('Location: /');
     }
 }

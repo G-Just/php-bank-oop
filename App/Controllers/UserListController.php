@@ -9,8 +9,13 @@ class UserListController extends Controller
 {
     public function index()
     {
-        $db = new DataBaseHandler('users');
-        $users = $db->showAll();
-        return $this->view('userlist', [$users]);
+        if (isset($_SESSION['id'])) {
+            $db = new DataBaseHandler('users');
+            $users = $db->showAll();
+            return $this->view('userlist', [$users]);
+        } else {
+            $_SESSION['error'] = 'Login to gain access to all features';
+            header('Location: /login');
+        }
     }
 }

@@ -6,34 +6,33 @@ class CreateAccountModel
 {
     public $number;
     private $db;
-    private $accounts;
     public function __construct()
     {
         $this->db = new DataBaseHandler('data');
-        $this->accounts = ($this->db)->showAll();
         $this->number = $this->generateNumber();
     }
-    public function validate($name, $lastName, $code)
+    public function validate($name, $lastName, $code): void
     {
         $name = htmlspecialchars($name);
         $lastName = htmlspecialchars($lastName);
         $code = htmlspecialchars($code);
         if (strlen($name) === 0 || strlen($lastName) === 0 || strlen($code) === 0) {
             $_SESSION['error'] = 'Empty fields';
-            return '/new';
+            return header('Location: /new');
         }
         if (!$this->lengthValidation($name, $lastName)) {
-            return '/new';
+            return header('Location: /new');
         }
         if (!$this->codeValidation($code)) {
-            return '/new';
+            return header('Location: /new');
         }
         if (!$this->duplicateCheck($code)) {
-            return '/new';
+            return header('Location: /new');
         }
-        return '/';
+        $this->db->create(['name' => $name, 'lastName' => $lastName, 'number' => $this->number, 'personalCode' => $code, 'balance' => 0]);
+        return header('Location: /');
     }
-    private function codeValidation($code)
+    private function codeValidation($code): bool
     {
         if (strlen($code) === 11) {
             if ($code[0] >= 1 && $code[0] <= 6) {
@@ -55,7 +54,7 @@ class CreateAccountModel
         $_SESSION['error'] = 'Invalid personal code';
         return false;
     }
-    private function lengthValidation($name, $lastName)
+    private function lengthValidation($name, $lastName): bool
     {
         if (strlen($name) < 3 || strlen($lastName) < 3) {
             $_SESSION['error'] = 'Name and Last name should be at least 3 characters long';
@@ -63,9 +62,9 @@ class CreateAccountModel
         }
         return true;
     }
-    private function duplicateCheck($code)
+    private function duplicateCheck($code): bool
     {
-        foreach ($this->accounts as $account) {
+        foreach ($this->db->showAll() as $account) {
             if ($account['personalCode'] === $code) {
                 $_SESSION['error'] = 'Account with entered personal number already exists';
                 return false;
@@ -73,13 +72,13 @@ class CreateAccountModel
         }
         return true;
     }
-    private function generateNumber()
+    private function generateNumber(): string
     {
         $number = '';
         foreach (range(1, 11) as $digit) {
             $number = $number . (string)rand(0, 9);
         }
-        foreach ($this->accounts as $account) {
+        foreach ($this->db->showAll() as $account) {
             if ($number === substr($account['number'], 9)) {
                 return $this->generateNumber();
             }

@@ -4,7 +4,7 @@ use App\Classes\DataBaseHandler;
 
 class LoginModel
 {
-    public function validate($email, $password)
+    public function validate($email, $password): void
     {
         $email = htmlspecialchars($email);
         $password = htmlspecialchars($password);
@@ -12,7 +12,7 @@ class LoginModel
         $users = $db->showAll();
         if (strlen($email) === 0 || strlen($password) === 0) {
             $_SESSION['error'] = 'Empty fields';
-            return '/login';
+            header('Location: /login');
         }
         foreach ($users as $user) {
             if ($user['email'] === $email) {
@@ -24,14 +24,14 @@ class LoginModel
                     $_SESSION['actions'] = $user['actions'];
                     $_SESSION['created'] = $user['created'];
                     $_SESSION['error'];
-                    return '/';
+                    header('Location: /');
                 } else {
                     $_SESSION['error'] = 'Wrong password';
-                    return '/login';
+                    header('Location: /login');
                 }
             }
         }
         $_SESSION['error'] = 'Email does not exist';
-        return '/login';
+        header('Location: /login');
     }
 }

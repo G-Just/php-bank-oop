@@ -9,16 +9,15 @@ class CreateAccountController extends Controller
     public function index()
     {
         if (isset($_SESSION['id'])) {
-            $model = $this->model('CreateAccountModel');
-            $number = $model->number;
+            $number = $this->model('CreateAccountModel')->number;
             return $this->view('newAccount', [$number, $_SESSION['error'] ?? '']);
         } else {
-            $_SESSION['error'] = 'Login to use all features';
+            $_SESSION['error'] = 'Login to gain access to all features';
             header('Location: /login');
         }
     }
     public function handlePost()
     {
-        header('Location: ' . $this->model('CreateAccountModel')->validate($_POST['name'], $_POST['lastName'], $_POST['personalCode']));
+        $this->model('CreateAccountModel')->validate($_POST['name'], $_POST['lastName'], $_POST['personalCode']);
     }
 }

@@ -8,7 +8,11 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return $this->view('register');
+        if (isset($_SESSION['id'])) {
+            header('Location: /');
+        } else {
+            return $this->view('register');
+        }
     }
     public function handlePost()
     {

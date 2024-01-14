@@ -67,4 +67,12 @@ class DataBaseHandler implements DataBase
     {
         return $this->log;
     }
+    private function sortByLastName($a, $b)
+    {
+        if (($a->lastName <=> $b->lastName) === 0) {
+            return $a->name <=> $b->name;
+        } else {
+            return $a->lastName <=> $b->lastName;
+        }
+    }
 }

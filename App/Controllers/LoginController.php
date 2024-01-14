@@ -8,10 +8,14 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return $this->view('login', [$_SESSION['error'] ?? '']);
+        if (isset($_SESSION['id'])) {
+            header('Location: /');
+        } else {
+            return $this->view('login', [$_SESSION['error'] ?? '']);
+        }
     }
     public function handlePost()
     {
-        header('Location: ' . $this->model('LoginModel')->validate($_POST['email'], $_POST['password']));
+        return $this->model('LoginModel')->validate($_POST['email'], $_POST['password']);
     }
 }
