@@ -59,13 +59,12 @@
                         <div class="flex gap-6 relative after:content-[''] after:absolute after:top-16 after:-bottom-11 after:left-7 after:w-px after:bg-gray-500">
                             <img class="h-16 rounded-full w-h-16" src="<?= URL . 'img/' . $entry['image'] ?>" alt="action icon">
                             <div>
-                                <p class="text-left">
+                                <p class="font-normal text-left">
                                     <span class="font-bold text-teal-600"><?= $entry['user'] ?></span>
                                     <?= $entry['action'] ?><br>
                                     <span class="font-bold">
                                         <?= $entry['account'] ?>
                                     </span>
-                                    for
                                     <span class="font-bold text-teal-600"><?= $entry['name'] ?></span>
                                 </p>
                                 <p class="text-sm text-left text-gray-500"><?= $entry['time'] ?></p>

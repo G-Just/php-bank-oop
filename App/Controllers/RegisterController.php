@@ -11,11 +11,11 @@ class RegisterController extends Controller
         if (isset($_SESSION['id'])) {
             header('Location: /');
         } else {
-            return $this->view('register');
+            return $this->view('register', ['error' => $_SESSION['error'] ?? '']);
         }
     }
     public function handlePost()
     {
-        return $this->view('login');
+        return $this->model('RegisterModel')->validate($_POST['username'], $_POST['email'], $_POST['password'], $_POST['confirmPassword']);
     }
 }

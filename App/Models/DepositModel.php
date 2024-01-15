@@ -16,7 +16,7 @@ class DepositModel
         if ($this->deposit <= 0 || !isset($this->deposit) || $this->deposit > PHP_INT_MAX) {
             $_SESSION['error'] = 'Invalid deposit amount';
             header('Location: ' . URL . "account/deposit/$accountId");
-            exit();
+            die();
         }
         $accData = $this->db->show($accountId);
         $accData['balance'] += round($this->deposit, 2);

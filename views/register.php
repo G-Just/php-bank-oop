@@ -3,7 +3,7 @@
         <div class="relative z-10 w-1/2 px-24 pt-20 -m-px after:opacity-95 after:rounded-3xl after:content-[''] after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 after:bg-slate-950 after:-z-10 rounded-3xl">
             <h1 class="m-4 text-4xl font-bold text-center">Sign Up</h1>
             <hr>
-            <div class="flex items-center justify-center h-24">Error message here</div>
+            <div class="flex items-center justify-center h-24 text-2xl text-center text-red-500"><?= $data['error'] ?></div>
             <form class="flex flex-col gap-8" action="" method="POST">
                 <input class="px-4 py-2 font-semibold text-slate-950 rounded-2xl" placeholder="Username" type="text" name="username">
                 <input class="px-4 py-2 font-semibold text-slate-950 rounded-2xl" placeholder="Email Address" type="email" name="email">

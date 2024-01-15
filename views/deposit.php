@@ -25,8 +25,7 @@
                 const output = document.getElementById('expected');
                 const inputText = document.getElementById('inp');
                 const balance = document.getElementById('bal');
-                const trueBalance = +balance.innerText.slice(1);
-                console.log(output,inputText,balance,trueBalance);
+                const trueBalance = +balance.innerText.slice(1).split(',').join('');
                 output.innerHTML = `Expected balance : ${trueBalance+(+inputText.value) >= 0 && +inputText.value > 0 ? `$ ${(trueBalance+(+inputText.value)).toFixed(2)}` : 'Invalid'}`;
                 ">
                     <p class="text-center" id='expected'>&nbsp</p>

@@ -4,7 +4,7 @@ use App\Classes\DataBaseHandler;
 
 class LoginModel
 {
-    public function validate($email, $password): void
+    public function validate($email, $password)
     {
         $email = htmlspecialchars($email);
         $password = htmlspecialchars($password);
@@ -25,13 +25,16 @@ class LoginModel
                     $_SESSION['created'] = $user['created'];
                     $_SESSION['error'];
                     header('Location: /');
+                    exit();
                 } else {
                     $_SESSION['error'] = 'Wrong password';
                     header('Location: /login');
+                    die();
                 }
             }
         }
         $_SESSION['error'] = 'Email does not exist';
         header('Location: /login');
+        die();
     }
 }

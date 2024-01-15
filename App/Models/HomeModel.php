@@ -24,14 +24,16 @@ class HomeModel
                 'action' => match ($entry['action']) {
                     'deposited' => "deposited <span class='font-bold text-teal-600'>$" . $entry['amount'] . '</span> into account',
                     'withdrew' => "withdrew <span class='font-bold text-teal-600'>$" . $entry['amount'] . '</span> from account',
+                    'registered' => "signed up, <br> and is the newest user <span class='font-bold text-teal-600'>Say Hi 👋</span>",
                     default => $entry['action']
                 },
-                'account' => $this->accounts->show($entry['accountID'])['number'],
-                'name' => $this->accounts->show($entry['accountID'])['name'] . ' ' . $this->accounts->show($entry['accountID'])['lastName'],
+                'account' => $entry['accountID'] === -1 ? '' : $this->accounts->show($entry['accountID'])['number'],
+                'name' => $entry['accountID'] === -1 ? '' : "<span class='font-normal text-white'>for</span> " . $this->accounts->show($entry['accountID'])['name'] . ' ' . $this->accounts->show($entry['accountID'])['lastName'],
                 'time' => $entry['time'],
                 'image' => match ($entry['action']) {
                     'deposited' => 'deposit.svg',
                     'withdrew' => 'withdraw.svg',
+                    'registered' => 'newUser.svg',
                     default => 'created.svg'
                 },
             ];

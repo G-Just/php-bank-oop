@@ -11,6 +11,11 @@ class AccountController extends Controller
     public function __construct()
     {
         $this->db = new DataBaseHandler('data');
+        if (!isset($_SESSION['id'])) {
+            $_SESSION['error'] = 'Login to gain access to all features';
+            header('Location: /login');
+            die();
+        }
     }
     public function dashboard($accountId)
     {

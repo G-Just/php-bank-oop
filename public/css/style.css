@@ -761,10 +761,6 @@ video {
   width: 80%;
 }
 
-.w-52 {
-  width: 13rem;
-}
-
 .w-60 {
   width: 15rem;
 }
@@ -773,16 +769,12 @@ video {
   width: 1.75rem;
 }
 
-.w-full {
-  width: 100%;
-}
-
-.w-80 {
-  width: 20rem;
-}
-
 .w-96 {
   width: 24rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .min-w-80 {
@@ -1175,6 +1167,10 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-normal {
+  font-weight: 400;
 }
 
 .uppercase {
