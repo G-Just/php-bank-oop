@@ -32,7 +32,7 @@
                                 <td class="px-5 py-5 text-sm border-b border-neutral-600 bg-slate-900">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 w-10 h-10">
-                                            <img class="w-full h-full rounded-full" src="/img/pfp.jpg" alt="user profile picture" />
+                                            <img class="w-full h-full rounded-full" src=<?= URL . "img/pfp.jpg" ?> alt="user profile picture" />
                                         </div>
                                         <div class="ml-3">
                                             <p class="text-white whitespace-no-wrap">
