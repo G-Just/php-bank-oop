@@ -5,7 +5,7 @@
         "lastName": "Doe",
         "number": "LT009999995641657718",
         "personalCode": "94723842328",
-        "balance": 251
+        "balance": 250
     },
     {
         "id": 1,
@@ -62,5 +62,13 @@
         "number": "LT009999908446872709",
         "personalCode": "50105120932",
         "balance": 97041.34
+    },
+    {
+        "id": 8,
+        "name": "Light",
+        "lastName": "Yagami",
+        "number": "LT009999952124520154",
+        "personalCode": "43801108098",
+        "balance": 500
     }
 ]

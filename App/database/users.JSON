@@ -1,38 +1,29 @@
 [
-  {
-    "id": 0,
-    "username": "IS1ca7122a5fe82d",
-    "email": "98f87fd651@gmail.com",
-    "role": "C.E.O",
-    "status": "Active",
-    "created": "Jan 21, 2020",
-    "password": "$2y$10$.TXmOpASxFDe/R10KtM/s.R9f1GN1dhJB9A4lH31H6LY4CL5I4YTy"
-  },
-  {
-    "id": 1,
-    "username": "ADMIN",
-    "email": "admin@admin.com",
-    "role": "Manager",
-    "status": "Active",
-    "created": "Jan 19, 2020",
-    "password": "$2y$10$.11XltrgdBmx.GI4GDR7EecQEZGmb3dx5L23CTDFvEG0vACbgeKDK"
-  },
-  {
-    "id": 2,
-    "username": "John",
-    "email": "john123@gmail.com",
-    "role": "Operator",
-    "status": "On leave",
-    "created": "Jan 30, 2021",
-    "password": "$2y$10$.11XltrgdBmx.GI4GDR7EecQEZGmb3dx5L23CTDFvEG0vACbgeKDK"
-  },
-  {
-    "id": 2,
-    "username": "Jane",
-    "email": "jane123@gmail.com",
-    "role": "Senior Operator",
-    "status": "Inactive",
-    "created": "May 12, 2012",
-    "password": "$2y$10$.11XltrgdBmx.GI4GDR7EecQEZGmb3dx5L23CTDFvEG0vACbgeKDK"
-  }
+    {
+        "id": 0,
+        "username": "IS1ca7122a5fe82d",
+        "email": "98f87fd651@gmail.com",
+        "role": "C.E.O",
+        "status": "Active",
+        "created": "Jan 21, 2020",
+        "password": "$2y$10$.TXmOpASxFDe\/R10KtM\/s.R9f1GN1dhJB9A4lH31H6LY4CL5I4YTy"
+    },
+    {
+        "id": 1,
+        "username": "ADMIN",
+        "email": "admin@admin.com",
+        "role": "Manager",
+        "status": "Active",
+        "created": "Jan 19, 2020",
+        "password": "$2y$10$.11XltrgdBmx.GI4GDR7EecQEZGmb3dx5L23CTDFvEG0vACbgeKDK"
+    },
+    {
+        "id": 2,
+        "username": "Joe",
+        "email": "joe@joe.com",
+        "role": "Operator",
+        "status": "Active",
+        "created": "Jan 15, 2024",
+        "password": "$2y$10$PfcAEaiHaXRWcintBDYNfOQM4rJKZMBS.39yAhirzzHa\/Dk2Yp9Ja"
+    }
 ]

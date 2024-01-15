@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "user": "Joe",
+        "action": "registered",
+        "account": -1,
+        "accountNumber": 0,
+        "time": "2024 January, 15 @ 10:35",
+        "amount": 0
+    },
+    {
+        "user": "IS1ca7122a5fe82d",
+        "action": "created account",
+        "account": "Light Yagami",
+        "accountNumber": "LT009999952124520154",
+        "time": "2024 January, 15 @ 10:37",
+        "amount": 0
+    },
+    {
+        "user": "IS1ca7122a5fe82d",
+        "action": "deposited",
+        "account": "Light Yagami",
+        "accountNumber": "LT009999952124520154",
+        "time": "2024 January, 15 @ 10:37",
+        "amount": 500
+    }
+]
