@@ -29,7 +29,11 @@ class DataBaseHandler implements DataBase
         }
         date_default_timezone_set("Europe/Vilnius");
         array_push($this->data, ['id' => $id] + $userData);
-        array_push($this->log, ['id' => $_SESSION['id'], 'action' => 'created account', 'accountID' => $id, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
+        if (isset($_SESSION['id'])) {
+            array_push($this->log, ['id' => $_SESSION['id'], 'action' => 'created account', 'accountID' => $id, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
+        } else {
+            array_push($this->log, ['id' => $id, 'action' => 'registered', 'accountID' => -1, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
+        }
         $this->push();
     }
     function update(int $userId, array $userData): void
