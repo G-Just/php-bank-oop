@@ -30,9 +30,9 @@ class DataBaseHandler implements DataBase
         date_default_timezone_set("Europe/Vilnius");
         array_push($this->data, ['id' => $id] + $userData);
         if (isset($_SESSION['id'])) {
-            array_push($this->log, ['id' => $_SESSION['id'], 'action' => 'created account', 'accountID' => $id, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
+            array_push($this->log, ['user' => $_SESSION['username'], 'action' => 'created account', 'account' => $userData['name'] . ' ' . $userData['lastName'], 'accountNumber' => $userData['number'], 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
         } else {
-            array_push($this->log, ['id' => $id, 'action' => 'registered', 'accountID' => -1, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
+            array_push($this->log, ['user' => $userData['username'], 'action' => 'registered', 'account' => -1, 'accountNumber' => 0, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
         }
         $this->push();
     }
@@ -46,17 +46,22 @@ class DataBaseHandler implements DataBase
                 $this->data[$key] = $userData;
             }
         }
-        array_push($this->log, ['id' => $_SESSION['id'], 'action' => $action, 'accountID' => $userId, 'time' => date('Y F, d @ H:i'), 'amount' => round(abs($amount), 2)]);
+        date_default_timezone_set("Europe/Vilnius");
+        array_push($this->log, ['user' => $_SESSION['username'], 'action' => $action, 'account' => $userData['name'] . ' ' . $userData['lastName'], 'accountNumber' => $userData['number'], 'time' => date('Y F, d @ H:i'), 'amount' => round(abs($amount), 2)]);
         $this->push();
     }
     function delete(int $userId): void
     {
         foreach ($this->data as $key => $user) {
             if ($userId === $user['id']) {
+                $name = $user['name'];
+                $lastName = $user['lastName'];
+                $number = $user['number'];
                 unset($this->data[$key]);
             }
         }
-        array_push($this->log, ['id' => $_SESSION['id'], 'action' => 'deleted account', 'accountID' => $userId, 'time' => date('Y F, d @ H:i'), 'amount' => 0]);
+        date_default_timezone_set("Europe/Vilnius");
+        array_push($this->log, ['user' => $_SESSION['username'], 'action' => 'deleted account', 'account' => $name . ' ' . $lastName, 'accountNumber' => $number,  'time' => date('Y F, d @ H:i'), 'amount' => 0]);
         $this->push();
     }
     function show(int $userId): array

@@ -41,4 +41,16 @@ class AccountController extends Controller
     {
         return $this->model('WithdrawModel')->withdraw($accountId);
     }
+    public function handleDelete($accountId)
+    {
+        if ($this->db->show($accountId)['balance'] === 0) {
+            $this->db->delete($accountId);
+            header('Location: /');
+            exit();
+        } else {
+            $_SESSION['error'] = 'Accounts with non zero balance cannot be deleted';
+            header('Location:' . URL . "account/dashboard/$accountId");
+            exit();
+        }
+    }
 }

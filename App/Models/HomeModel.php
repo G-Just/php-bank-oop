@@ -8,8 +8,7 @@ class HomeModel
 {
     private $formattedLog = [];
     private $stats = [];
-    private $users, $log;
-    public $accounts;
+    private $users, $log, $accounts;
     public function __construct()
     {
         $this->accounts = new DataBaseHandler('data');
@@ -20,15 +19,15 @@ class HomeModel
     {
         foreach ($this->log as $entry) {
             $this->formattedLog[] = [
-                'user' => $this->users->show($entry['id'])['username'],
+                'user' => $entry['user'],
                 'action' => match ($entry['action']) {
                     'deposited' => "deposited <span class='font-bold text-teal-600'>$" . $entry['amount'] . '</span> into account',
                     'withdrew' => "withdrew <span class='font-bold text-teal-600'>$" . $entry['amount'] . '</span> from account',
                     'registered' => "signed up, <br> and is the newest user <span class='font-bold text-teal-600'>Say Hi 👋</span>",
                     default => $entry['action']
                 },
-                'account' => $entry['accountID'] === -1 ? '' : $this->accounts->show($entry['accountID'])['number'],
-                'name' => $entry['accountID'] === -1 ? '' : "<span class='font-normal text-white'>for</span> " . $this->accounts->show($entry['accountID'])['name'] . ' ' . $this->accounts->show($entry['accountID'])['lastName'],
+                'account' => $entry['account'] === -1 ? '' : $entry['accountNumber'],
+                'name' => $entry['account'] === -1 ? '' : "<span class='font-normal text-white'>for</span> " . $entry['account'],
                 'time' => $entry['time'],
                 'image' => match ($entry['action']) {
                     'deposited' => 'deposit.svg',
@@ -55,5 +54,9 @@ class HomeModel
             'maxHoldings' => max($sum)
         ];
         return $this->stats;
+    }
+    public function getAccounts()
+    {
+        return $this->accounts->showAll();
     }
 }

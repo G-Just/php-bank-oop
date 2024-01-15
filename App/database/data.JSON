@@ -5,7 +5,7 @@
         "lastName": "Doe",
         "number": "LT009999995641657718",
         "personalCode": "94723842328",
-        "balance": 250
+        "balance": 251
     },
     {
         "id": 1,
@@ -21,7 +21,7 @@
         "lastName": "Girffin",
         "number": "LT009999956344606715",
         "personalCode": "33309240068",
-        "balance": 40.55
+        "balance": 40.5
     },
     {
         "id": 3,
@@ -37,7 +37,7 @@
         "lastName": "Saint",
         "number": "LT009999912238558719",
         "personalCode": "39603229210",
-        "balance": 32152200.26
+        "balance": 32152200.21
     },
     {
         "id": 5,
@@ -61,14 +61,6 @@
         "lastName": "Griffin",
         "number": "LT009999908446872709",
         "personalCode": "50105120932",
-        "balance": 97041.33
-    },
-    {
-        "id": 8,
-        "name": "TestName",
-        "lastName": "TestLastName",
-        "number": "LT009999989856157042",
-        "personalCode": "38710288654",
-        "balance": 0
+        "balance": 97041.34
     }
 ]
