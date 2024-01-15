@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tailwind": "npx tailwindcss -i src/input.css -o ./public/css/style.css --watch"
+    "tailwind": "npx tailwindcss -i src/input.css -o ./public/css/style.css --watch",
+    "buildTailwind": "npx tailwindcss -o ./public/css/style.css --minify"
   },
   "keywords": [],
   "author": "G-Just (https://github.com/G-Just)",
