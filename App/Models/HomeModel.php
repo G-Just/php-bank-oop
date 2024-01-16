@@ -57,6 +57,14 @@ class HomeModel
     }
     public function getAccounts()
     {
-        return $this->accounts->showAll();
+        $accounts = $this->accounts->showAll();
+        usort($accounts, function ($a, $b) {
+            if (($a['lastName'] <=> $b['lastName']) === 0) {
+                return $a['name'] <=> $b['name'];
+            } else {
+                return $a['lastName'] <=> $b['lastName'];
+            }
+        });
+        return $accounts;
     }
 }
