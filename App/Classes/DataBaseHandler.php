@@ -20,7 +20,7 @@ class DataBaseHandler implements DataBase
         file_put_contents(__DIR__ . '/../database/' . $this->database . '.JSON', json_encode($this->data, JSON_PRETTY_PRINT));
         file_put_contents(__DIR__ . '/../database/log.JSON', json_encode($this->log, JSON_PRETTY_PRINT));
     }
-    function create(array $userData): void
+    public function create(array $userData): void
     {
         if (isset((end($this->data)['id']))) {
             $id = (end($this->data)['id']) + 1;
@@ -36,7 +36,7 @@ class DataBaseHandler implements DataBase
         }
         $this->push();
     }
-    function update(int $userId, array $userData): void
+    public function update(int $userId, array $userData): void
     {
         $user = $this->show($userId);
         $amount = $user['balance'] - $userData['balance'];
@@ -50,7 +50,7 @@ class DataBaseHandler implements DataBase
         array_push($this->log, ['user' => $_SESSION['username'], 'action' => $action, 'account' => $userData['name'] . ' ' . $userData['lastName'], 'accountNumber' => $userData['number'], 'time' => date('Y F, d @ H:i'), 'amount' => round(abs($amount), 2)]);
         $this->push();
     }
-    function delete(int $userId): void
+    public function delete(int $userId): void
     {
         foreach ($this->data as $key => $user) {
             if ($userId === $user['id']) {
@@ -64,7 +64,7 @@ class DataBaseHandler implements DataBase
         array_push($this->log, ['user' => $_SESSION['username'], 'action' => 'deleted account', 'account' => $name . ' ' . $lastName, 'accountNumber' => $number,  'time' => date('Y F, d @ H:i'), 'amount' => 0]);
         $this->push();
     }
-    function show(int $userId): array
+    public function show(int $userId): array
     {
         foreach ($this->data as $account) {
             if ($account['id'] === $userId) {
@@ -72,11 +72,11 @@ class DataBaseHandler implements DataBase
             }
         }
     }
-    function showAll(): array
+    public function showAll(): array
     {
         return $this->data;
     }
-    function LogShowAll(): array
+    public function LogShowAll(): array
     {
         return $this->log;
     }

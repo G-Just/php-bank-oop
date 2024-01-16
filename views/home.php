@@ -1,6 +1,6 @@
 <body>
     <div class="flex flex-col w-full gap-4 bg-[url('/../img/bg_pattern.jpg')] bg-cover">
-        <div class="p-8 pt-4 m-4 mb-0 text-center rounded-lg shadow-lg min-h-96 bg-slate-800">
+        <div class="pt-4 pb-8 m-4 mb-0 text-center rounded-lg shadow-lg min-h-96 bg-slate-800">
             <h1 class="text-2xl font-bold">Accounts</h1>
             <div class="h-full overflow-y-auto">
                 <table class="min-w-full mb-2 leading-normal">
