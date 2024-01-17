@@ -24,7 +24,7 @@
                     <p class="col-span-2 text-red-600"><?= $_SESSION['error'] ?? '' ?></p>
                 </div>
             </div>
-            <div class="h-full p-8 pt-4 rounded-lg shadow-lg bg-slate-800">
+            <div class="h-full p-10 rounded-lg shadow-lg bg-slate-800">
                 <canvas id="chart"></canvas>
                 <script src="path/to/chartjs/dist/chart.umd.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -52,7 +52,8 @@
                         options: {
                             responsive: true,
                             maintainAspectRatio: false,
-                            borderWidth: 0,
+                            borderWidth: 1,
+                            hoverOffset: 20
                         }
                     };
                     var chartLine = new Chart(

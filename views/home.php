@@ -76,29 +76,41 @@
             <div class="w-full gap-4 p-10 pt-4 overflow-hidden text-center rounded-lg shadow-lg bg-slate-800">
                 <h1 class="mb-2 text-2xl font-bold">Statistics</h1>
                 <div class="grid h-full grid-cols-3 gap-4 py-4">
-                    <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
-                        <h2 class="py-2 mb-6 text-2xl bg-slate-900">Open accounts</h2>
-                        <p class="px-2 text-2xl font-bold"><?= $data['stats'][0]['accountCount'] ?></p>
+                    <div class="pl-2 bg-teal-800 rounded-xl bg-clip-padding">
+                        <div class="relative flex flex-col items-center justify-center h-full -mr-px bg-slate-900 rounded-xl">
+                            <p class="px-2 text-4xl font-bold"><?= $data['stats'][0]['accountCount'] ?></p>
+                            <p class="mt-2 text-sm text-teal-600">Opened bank accounts</p>
+                        </div>
                     </div>
-                    <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
-                        <h2 class="py-2 mb-6 text-2xl bg-slate-900">Registered Users</h2>
-                        <p class="px-2 text-2xl font-bold"><?= $data['stats'][0]['userCount'] ?></p>
+                    <div class="pl-2 bg-emerald-800 rounded-xl bg-clip-padding">
+                        <div class="relative flex flex-col items-center justify-center h-full -mr-px bg-slate-900 rounded-xl">
+                            <p class="px-2 text-4xl font-bold"><?= $data['stats'][0]['userCount'] ?></p>
+                            <p class="mt-2 text-sm text-teal-600">Registered users</p>
+                        </div>
                     </div>
-                    <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
-                        <h2 class="py-2 mb-6 text-2xl bg-slate-900">Total holdings</h2>
-                        <p class="px-2 text-2xl font-bold"><?= '$' . number_format($data['stats'][0]['totalHoldings'], 2) ?></p>
+                    <div class="pl-2 bg-sky-950 rounded-xl bg-clip-padding">
+                        <div class="relative flex flex-col items-center justify-center h-full -mr-px bg-slate-900 rounded-xl">
+                            <p class="px-2 text-3xl font-bold"><?= '$' . number_format($data['stats'][0]['totalHoldings'], 2) ?></p>
+                            <p class="mt-2 text-sm text-teal-600">Total holdings</p>
+                        </div>
                     </div>
-                    <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
-                        <h2 class="py-2 mb-6 text-2xl bg-slate-900">Average balance</h2>
-                        <p class="px-2 text-2xl font-bold"><?= '$' . number_format($data['stats'][0]['averageHoldings'], 2) ?></p>
+                    <div class="pl-2 bg-cyan-800 rounded-xl bg-clip-padding">
+                        <div class="relative flex flex-col items-center justify-center h-full -mr-px bg-slate-900 rounded-xl">
+                            <p class="px-2 text-3xl font-bold"><?= '$' . number_format($data['stats'][0]['averageHoldings'], 2) ?></p>
+                            <p class="mt-2 text-sm text-teal-600">Average balance</p>
+                        </div>
                     </div>
-                    <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
-                        <h2 class="py-2 mb-6 text-2xl bg-slate-900">Min balance</h2>
-                        <p class="px-2 text-2xl font-bold"><?= '$' . number_format($data['stats'][0]['minHoldings'], 2) ?></p>
+                    <div class="pl-2 bg-lime-900 rounded-xl bg-clip-padding">
+                        <div class="relative flex flex-col items-center justify-center h-full -mr-px bg-slate-900 rounded-xl">
+                            <p class="px-2 text-3xl font-bold"><?= '$' . number_format($data['stats'][0]['minHoldings'], 2) ?></p>
+                            <p class="mt-2 text-sm text-teal-600">Min balance</p>
+                        </div>
                     </div>
-                    <div class="w-full h-full pb-4 bg-slate-700 rounded-xl">
-                        <h2 class="py-2 mb-6 text-2xl bg-slate-900">Max balance</h2>
-                        <p class="px-2 text-2xl font-bold"><?= '$' . number_format($data['stats'][0]['maxHoldings'], 2) ?></p>
+                    <div class="pl-2 bg-indigo-900 rounded-xl bg-clip-padding">
+                        <div class="relative flex flex-col items-center justify-center h-full -mr-px bg-slate-900 rounded-xl">
+                            <p class="px-2 text-3xl font-bold"><?= '$' . number_format($data['stats'][0]['maxHoldings'], 2) ?></p>
+                            <p class="mt-2 text-sm text-teal-600">Max balance</p>
+                        </div>
                     </div>
                 </div>
             </div>
