@@ -30,7 +30,7 @@ class CreateAccountModel
             return header('Location: /new');
         }
         $this->db->create(['name' => $name, 'lastName' => $lastName, 'number' => $this->number, 'personalCode' => $code, 'balance' => 0]);
-        $_SESSION['message'] = 'New account created successfully';
+        $_SESSION['globalMessage'] = 'New account created successfully';
         return header('Location: /');
     }
     private function codeValidation($code)

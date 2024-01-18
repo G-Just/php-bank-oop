@@ -62,5 +62,21 @@
     "accountNumber": "LT009999989456475152",
     "time": "2024 January, 18 @ 08:30",
     "amount": 1
+  },
+  {
+    "user": "IS1ca7122a5fe82d",
+    "action": "deposited",
+    "account": "John Doe",
+    "accountNumber": "LT009999995641657718",
+    "time": "2024 January, 18 @ 09:59",
+    "amount": 1
+  },
+  {
+    "user": "IS1ca7122a5fe82d",
+    "action": "withdrew",
+    "account": "John Doe",
+    "accountNumber": "LT009999995641657718",
+    "time": "2024 January, 18 @ 09:59",
+    "amount": 1
   }
 ]

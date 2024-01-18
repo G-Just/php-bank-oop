@@ -16,6 +16,9 @@
                                 Username
                             </th>
                             <th class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase border-b-2 border-neutral-600 bg-slate-800">
+                                Email
+                            </th>
+                            <th class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase border-b-2 border-neutral-600 bg-slate-800">
                                 Role
                             </th>
                             <th class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase border-b-2 border-neutral-600 bg-slate-800">
@@ -40,6 +43,9 @@
                                             </p>
                                         </div>
                                     </div>
+                                </td>
+                                <td class="px-5 py-5 text-sm border-b border-neutral-600 bg-slate-900">
+                                    <p class="text-white whitespace-no-wrap"><?= $user['email'] ?></p>
                                 </td>
                                 <td class="px-5 py-5 text-sm border-b border-neutral-600 bg-slate-900">
                                     <p class="text-white whitespace-no-wrap"><?= $user['role'] ?></p>

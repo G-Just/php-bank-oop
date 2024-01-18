@@ -18,6 +18,7 @@ class Controller
         require ROOT . "views/$view.php";
         $content = ob_get_clean();
         unset($_SESSION['error']);
+        unset($_SESSION['globalMessage']);
         unset($_SESSION['message']);
         return $content;
     }

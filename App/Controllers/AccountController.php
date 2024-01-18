@@ -45,7 +45,7 @@ class AccountController extends Controller
     {
         if ($this->db->show($accountId)['balance'] === 0) {
             $this->db->delete($accountId);
-            $_SESSION['message'] = 'Account deleted successfully';
+            $_SESSION['globalMessage'] = 'Account deleted successfully';
             header('Location: /');
             exit();
         } else {
