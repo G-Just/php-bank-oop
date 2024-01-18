@@ -22,6 +22,7 @@
                     <a class="px-5 py-3 text-xl font-bold bg-yellow-900 border-2 rounded-lg border-neutral-700 bg-opacity-20 hover:bg-opacity-90" href=<?= URL . 'account/withdraw/' . $data['account']['id'] ?>>Withdraw</a>
                     <a class="col-span-2 px-5 py-3 text-xl font-bold bg-red-800 border-2 rounded-lg border-neutral-700 bg-opacity-20 hover:bg-opacity-90" href=<?= URL . 'account/delete/' . $data['account']['id'] ?>>Delete</a>
                     <p class="col-span-2 text-red-600"><?= $_SESSION['error'] ?? '' ?></p>
+                    <p class="col-span-2 text-green-600"><?= $_SESSION['message'] ?? '' ?></p>
                 </div>
             </div>
             <div class="h-full p-10 rounded-lg shadow-lg bg-slate-800">

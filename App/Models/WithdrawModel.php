@@ -27,6 +27,7 @@ class WithdrawModel
         $accData['balance'] -= round($this->withdraw, 2);
         $accData['balance'] = round($accData['balance'], 2);
         $this->db->update($accountId, $accData);
+        $_SESSION['message'] = 'Withdrew successfully';
         header('Location: ' . URL . "account/dashboard/$accountId");
         exit();
     }

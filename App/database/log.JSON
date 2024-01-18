@@ -1,34 +1,66 @@
 [
-    {
-        "user": "Joe",
-        "action": "registered",
-        "account": -1,
-        "accountNumber": 0,
-        "time": "2024 January, 15 @ 10:35",
-        "amount": 0
-    },
-    {
-        "user": "IS1ca7122a5fe82d",
-        "action": "created account",
-        "account": "Light Yagami",
-        "accountNumber": "LT009999952124520154",
-        "time": "2024 January, 15 @ 10:37",
-        "amount": 0
-    },
-    {
-        "user": "IS1ca7122a5fe82d",
-        "action": "deposited",
-        "account": "Light Yagami",
-        "accountNumber": "LT009999952124520154",
-        "time": "2024 January, 15 @ 10:37",
-        "amount": 500
-    },
-    {
-        "user": "IS1ca7122a5fe82d",
-        "action": "deposited",
-        "account": "Light Yagami",
-        "accountNumber": "LT009999952124520154",
-        "time": "2024 January, 15 @ 13:21",
-        "amount": 1
-    }
+  {
+    "user": "Joe",
+    "action": "registered",
+    "account": -1,
+    "accountNumber": 0,
+    "time": "2024 January, 15 @ 10:35",
+    "amount": 0
+  },
+  {
+    "user": "IS1ca7122a5fe82d",
+    "action": "created account",
+    "account": "Light Yagami",
+    "accountNumber": "LT009999952124520154",
+    "time": "2024 January, 15 @ 10:37",
+    "amount": 0
+  },
+  {
+    "user": "IS1ca7122a5fe82d",
+    "action": "deposited",
+    "account": "Light Yagami",
+    "accountNumber": "LT009999952124520154",
+    "time": "2024 January, 15 @ 10:37",
+    "amount": 500
+  },
+  {
+    "user": "IS1ca7122a5fe82d",
+    "action": "deposited",
+    "account": "Light Yagami",
+    "accountNumber": "LT009999952124520154",
+    "time": "2024 January, 15 @ 13:21",
+    "amount": 1
+  },
+  {
+    "user": "IS1ca7122a5fe82d",
+    "action": "withdrew",
+    "account": "Martin Byrde",
+    "accountNumber": "LT009999989456475152",
+    "time": "2024 January, 18 @ 08:26",
+    "amount": 10
+  },
+  {
+    "user": "IS1ca7122a5fe82d",
+    "action": "deposited",
+    "account": "Martin Byrde",
+    "accountNumber": "LT009999989456475152",
+    "time": "2024 January, 18 @ 08:28",
+    "amount": 10
+  },
+  {
+    "user": "IS1ca7122a5fe82d",
+    "action": "withdrew",
+    "account": "Martin Byrde",
+    "accountNumber": "LT009999989456475152",
+    "time": "2024 January, 18 @ 08:30",
+    "amount": 1
+  },
+  {
+    "user": "IS1ca7122a5fe82d",
+    "action": "deposited",
+    "account": "Martin Byrde",
+    "accountNumber": "LT009999989456475152",
+    "time": "2024 January, 18 @ 08:30",
+    "amount": 1
+  }
 ]

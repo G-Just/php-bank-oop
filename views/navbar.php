@@ -14,6 +14,7 @@
         </div>
         <div class="flex flex-col items-center">
             <div class="flex flex-col items-start w-full gap-6 pl-8 mt-14">
+                <p class="text-center text-green-600"><?= $_SESSION['message'] ?? '' ?></p>
                 <?php if (isset($_SESSION['id'])) { ?>
                     <div class="flex gap-4">
                         <img class="w-20 h-20 rounded-full" src=<?= URL . "img/pfp.jpg" ?> alt="profile picture">

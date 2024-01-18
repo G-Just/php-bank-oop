@@ -665,6 +665,10 @@ video {
   margin-top: 2rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -1371,6 +1375,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
 }
 
 .underline {

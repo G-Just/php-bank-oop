@@ -22,6 +22,7 @@ class DepositModel
         $accData['balance'] += round($this->deposit, 2);
         $accData['balance'] = round($accData['balance'], 2);
         $this->db->update($accountId, $accData);
+        $_SESSION['message'] = 'Deposited successfully';
         header('Location: ' . URL . "account/dashboard/$accountId");
         exit();
     }

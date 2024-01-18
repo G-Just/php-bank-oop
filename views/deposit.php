@@ -18,7 +18,7 @@
                 <h1 class="text-5xl">Balance</h1>
                 <hr class="w-60 border-px">
                 <h1 id='bal' class="text-8xl"><?= '$' . number_format($data['account']['balance'], 2) ?></h1>
-                <form class="flex flex-col gap-4" action=<?= URL . 'account/handleWithdrawal/' . $data['account']['id'] ?> method="post">
+                <form class="flex flex-col gap-4" action=<?= URL . 'account/handleDeposit/' . $data['account']['id'] ?> method="post">
                     <h1 class="mt-4 text-2xl text-center text-red-500"><?= $_SESSION['error'] ?? '&nbsp' ?></h1>
                     <h1 class="mt-4 text-2xl text-center">Deposit amount:</h1>
                     <div class="flex flex-col gap-2 text-center">
@@ -37,7 +37,7 @@
                             <button class="px-4 py-2 rounded-xl bg-slate-700 hover:bg-slate-600" onclick="preset(1000)">$1000.00</button>
                         </div>
                     </div>
-                    <input id='inp' class="px-4 py-2 text-xl font-bold text-white border-2 border-neutral-600 bg-opacity-30 bg-slate-700 rounded-xl" type="number" name="withdraw" step="0.01" oninput="
+                    <input id='inp' class="px-4 py-2 text-xl font-bold text-white border-2 border-neutral-600 bg-opacity-30 bg-slate-700 rounded-xl" type="number" name="deposit" step="0.01" oninput="
                 const output = document.getElementById('expected');
                 const inputText = document.getElementById('inp');
                 const balance = document.getElementById('bal');
