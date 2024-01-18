@@ -21,9 +21,9 @@
                     <hr class="w-60 border-px">
                     <h1 class="text-8xl"><?= '$' . number_format($data['account']['balance'], 2) ?></h1>
                     <div class="grid w-full grid-cols-2 gap-4 m-8 mb-px text-center">
-                        <a class="px-5 py-3 text-xl font-bold border-2 rounded-lg border-neutral-700 bg-emerald-800 bg-opacity-20 hover:bg-opacity-90" href=<?= URL . 'account/deposit/' . $data['account']['id'] ?>>Deposit</a>
-                        <a class="px-5 py-3 text-xl font-bold bg-yellow-900 border-2 rounded-lg border-neutral-700 bg-opacity-20 hover:bg-opacity-90" href=<?= URL . 'account/withdraw/' . $data['account']['id'] ?>>Withdraw</a>
-                        <a class="col-span-2 px-5 py-3 text-xl font-bold bg-red-800 border-2 rounded-lg border-neutral-700 bg-opacity-20 hover:bg-opacity-90" href=<?= URL . 'account/delete/' . $data['account']['id'] ?>>Delete</a>
+                        <a class="px-5 py-3 text-xl font-bold bg-opacity-25 border-2 rounded-lg border-neutral-700 bg-emerald-800 hover:bg-opacity-90" href=<?= URL . 'account/deposit/' . $data['account']['id'] ?>>Deposit</a>
+                        <a class="px-5 py-3 text-xl font-bold bg-yellow-700 bg-opacity-25 border-2 rounded-lg border-neutral-700 hover:bg-opacity-90" href=<?= URL . 'account/withdraw/' . $data['account']['id'] ?>>Withdraw</a>
+                        <a class="col-span-2 px-5 py-3 text-xl font-bold bg-red-800 bg-opacity-25 border-2 rounded-lg border-neutral-700 hover:bg-opacity-90" href=<?= URL . 'account/delete/' . $data['account']['id'] ?>>Delete</a>
                     </div>
                     <div class="flex">
                         <p class="col-span-2 text-red-600"><?= $_SESSION['error'] ?? '' ?></p>
