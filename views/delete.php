@@ -18,8 +18,8 @@
                 <h1 class="mb-4 text-8xl">Are you sure?</h1>
                 <p class="text-xl text-center">All account data will be lost!</p>
                 <form class="flex gap-4 mt-8" action=<?= URL . 'account/handleDelete/' . $data['account']['id'] ?> method="post">
-                    <button class="px-10 py-2 text-4xl bg-green-400 rounded-xl hover:bg-green-700" type="submit">Yes</button>
-                    <a class="px-10 py-2 text-4xl bg-red-400 rounded-xl hover:bg-red-500" href="<?= URL . 'account/dashboard/' . $data['account']['id'] ?>">No</a>
+                    <button class="px-10 py-2 text-4xl bg-green-700 bg-opacity-20 hover:bg-opacity-90 rounded-xl" type="submit">Yes</button>
+                    <a class="px-10 py-2 text-4xl bg-red-700 bg-opacity-20 hover:bg-opacity-90 rounded-xl" href="<?= URL . 'account/dashboard/' . $data['account']['id'] ?>">No</a>
                 </form>
             </div>
         </div>

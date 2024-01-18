@@ -22,26 +22,26 @@
                     </thead>
                     <tbody>
                         <?php foreach ($data['accounts'] as $user) : ?>
-                            <tr onclick="window.location=`/account/dashboard/<?= $user['id'] ?>`;" class="cursor-pointer hover:bg-slate-900">
+                            <tr onclick="window.location=`/account/dashboard/<?= $user['id'] ?>`;" class="cursor-pointer hover:bg-slate-900 hover:text-teal-600">
                                 <td class="px-5 py-5 text-lg border-b border-neutral-600x">
                                     <div class="flex items-center">
                                         <div>
-                                            <p class="text-white whitespace-no-wrap ">
+                                            <p class=whitespace-no-wrap ">
                                                 <?= $user['lastName'] . ' ' . $user['name'] ?>
                                             </p>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-5 py-5 text-lg border-b border-neutral-600x">
-                                    <p class="text-left text-white whitespace-no-wrap "><?= $user['personalCode'] ?></p>
+                                <td class=" px-5 py-5 text-lg border-b border-neutral-600x">
+                                            <p class="text-left whitespace-no-wrap "><?= $user['personalCode'] ?></p>
                                 </td>
                                 <td class="px-5 py-5 text-lg border-b border-neutral-600x">
-                                    <p class="text-left text-white whitespace-no-wrap ">
+                                    <p class="text-left whitespace-no-wrap ">
                                         <?= $user['number'] ?>
                                     </p>
                                 </td>
                                 <td class="px-5 py-5 text-lg border-b border-neutral-600x">
-                                    <p class="text-left text-white whitespace-no-wrap ">
+                                    <p class="text-left whitespace-no-wrap ">
                                         <?= '$' . number_format($user['balance'], 2) ?>
                                     </p>
                                 </td>

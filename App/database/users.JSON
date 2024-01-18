@@ -5,7 +5,7 @@
     "email": "98f87fd651@gmail.com",
     "role": "DEV",
     "status": "Active",
-    "created": "Jan 21, 2020",
+    "created": "Jan 9, 2024",
     "password": "$2y$10$.TXmOpASxFDe/R10KtM/s.R9f1GN1dhJB9A4lH31H6LY4CL5I4YTy"
   },
   {
@@ -14,7 +14,7 @@
     "email": "admin@admin.com",
     "role": "Admin",
     "status": "Active",
-    "created": "Jan 19, 2020",
+    "created": "Jan 10, 2024",
     "password": "$2y$10$.11XltrgdBmx.GI4GDR7EecQEZGmb3dx5L23CTDFvEG0vACbgeKDK"
   },
   {
@@ -32,7 +32,7 @@
     "email": "jane@jane.com",
     "role": "Senior Operator",
     "status": "Inactive",
-    "created": "Jan 15, 2024",
+    "created": "Jan 16, 2024",
     "password": "$2y$10$PfcAEaiHaXRWcintBDYNfOQM4rJKZMBS.39yAhirzzHa/Dk2Yp9Ja"
   }
 ]
