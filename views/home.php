@@ -27,14 +27,14 @@
                                     <td class="px-5 py-5 text-lg border-b border-neutral-600x">
                                         <div class="flex items-center">
                                             <div>
-                                                <p class=whitespace-no-wrap ">
-                                                <?= $user['lastName'] . ' ' . $user['name'] ?>
-                                            </p>
+                                                <p class="whitespace-no-wrap ">
+                                                    <?= $user['lastName'] . ' ' . $user['name'] ?>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td class=" px-5 py-5 text-lg border-b border-neutral-600x">
-                                                <p class="text-left whitespace-no-wrap "><?= $user['personalCode'] ?></p>
+                                    </td>
+                                    <td class="px-5 py-5 text-lg border-b border-neutral-600x">
+                                        <p class="text-left whitespace-no-wrap "><?= $user['personalCode'] ?></p>
                                     </td>
                                     <td class="px-5 py-5 text-lg border-b border-neutral-600x">
                                         <p class="text-left whitespace-no-wrap ">
