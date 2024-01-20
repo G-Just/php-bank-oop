@@ -2,6 +2,7 @@
 
 namespace App\Core;
 
+use App\Controllers\_404Controller;
 use App\Controllers\AccountController;
 use App\Controllers\CreateAccountController;
 use App\Controllers\HomeController;
@@ -28,7 +29,7 @@ class Router
                 'logout' => (new SignOutController)->$method(...$params),
                 'users' => (new UserListController)->$method(...$params),
                 'account' => (new AccountController)->$method(...$params),
-                default => '<h1>404 Page not found</h1>'
+                default => (new _404Controller)->$method(...$params)
             };
         } else {
             $method = $url[1] ?? 'handlePost';
@@ -37,7 +38,7 @@ class Router
                 'login' => (new LoginController)->$method(...$params),
                 'register' => (new RegisterController)->$method(...$params),
                 'account' => (new AccountController)->$method(...$params),
-                default => '<h1>404 Page not found</h1>'
+                default => (new _404Controller)->$method(...$params)
             };
         }
     }
