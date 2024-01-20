@@ -76,28 +76,25 @@
                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                     <!-- Chart line -->
                     <script>
-                        function* splitNParts(num, parts, min) {
-                            let remParts = parts;
-                            let sumParts = num;
-                            for (let i = 0; i < parts - 1; i++) {
-                                const pn = Math.ceil(Math.random() * (sumParts - (remParts * min)) + min)
-                                yield pn
-                                sumParts -= pn;
-                                remParts -= 1;
+                        function generateRandomValues() {
+                            const arr = [];
+                            for (let i = 0; i < 5; i++) {
+                                arr.push(Math.random() * <?= $data['account']['balance'] ?>)
                             }
-                            yield sumParts;
+                            return arr;
                         }
                         const labels = ["2019", "2020", "2021", "2022", "2023", "2024"];
-                        const values = [...splitNParts(<?= $data['account']['balance'] ?>, 5, 0)].sort((a, b) => a - b)
+                        const values = generateRandomValues();
                         const data = {
                             labels: labels,
                             datasets: [{
                                 label: "Balance",
-                                backgroundColor: "hsl(222, 47%, 11%)",
+                                backgroundColor: "hsla(242, 50%, 11%, 0.5)",
                                 borderColor: "hsl(0, 0%, 100%)",
                                 borderWidth: 1,
                                 data: [...values, <?= $data['account']['balance'] ?>],
-                                fill: true
+                                fill: true,
+                                lineTension: 0.3
                             }, ],
                         };
                         const configLineChart = {
@@ -108,11 +105,21 @@
                                 maintainAspectRatio: false,
                                 scales: {
                                     y: {
+                                        grid: {
+                                            color: 'rgba(200,200,200,0.1)',
+                                            borderColor: 'white'
+                                        },
                                         ticks: {
                                             callback: function(value, index, ticks) {
                                                 return '$' + value;
                                             }
                                         }
+                                    },
+                                    x: {
+                                        grid: {
+                                            color: 'rgba(200,200,200,0.1)',
+                                            borderColor: 'white'
+                                        },
                                     }
                                 }
                             }
