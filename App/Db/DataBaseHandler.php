@@ -14,8 +14,8 @@ class DataBaseHandler implements DataBase
     {
         $host = 'localhost';
         $db = 'bank';
-        $user = 'root';
-        $pass = '';
+        $userName = 'root';
+        $password = '';
         $charset = 'utf8';
         $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
         $options = [
@@ -23,7 +23,7 @@ class DataBaseHandler implements DataBase
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES => false,
         ];
-        $this->pdo = new PDO($dsn, $user, $pass, $options);
+        $this->pdo = new PDO($dsn, $userName, $password, $options);
         $this->table = $table;
     }
     public function create(array $userData): void
