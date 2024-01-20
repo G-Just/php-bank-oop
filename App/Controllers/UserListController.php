@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Classes\DataBaseHandler;
+use App\Db\FileBaseHandler;
 use App\Core\Controller;
 
 class UserListController extends Controller
@@ -10,7 +10,7 @@ class UserListController extends Controller
     public function index()
     {
         if (isset($_SESSION['id'])) {
-            $db = new DataBaseHandler('users');
+            $db = new FileBaseHandler('users');
             $users = $db->showAll();
             return $this->view('userlist', ['users' => $users]);
         } else {

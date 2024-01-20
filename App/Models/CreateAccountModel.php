@@ -1,6 +1,6 @@
 <?php
 
-use App\Classes\DataBaseHandler;
+use App\Db\FileBaseHandler;
 
 class CreateAccountModel
 {
@@ -8,7 +8,7 @@ class CreateAccountModel
     private $db;
     public function __construct()
     {
-        $this->db = new DataBaseHandler('data');
+        $this->db = new FileBaseHandler('data');
         $this->number = $this->generateNumber();
     }
     public function validate($name, $lastName, $code)

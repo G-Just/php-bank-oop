@@ -1,6 +1,6 @@
 <?php
 
-use App\Classes\DataBaseHandler;
+use App\Db\FileBaseHandler;
 
 class DepositModel
 {
@@ -9,7 +9,7 @@ class DepositModel
     public function __construct()
     {
         $this->deposit = $_POST['deposit'];
-        $this->db = new DataBaseHandler('data');
+        $this->db = new FileBaseHandler('data');
     }
     public function deposit($accountId)
     {

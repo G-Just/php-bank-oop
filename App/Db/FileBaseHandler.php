@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Classes;
+namespace App\Db;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use App\Classes\DataBase;
+use App\Db\DataBase;
 
-class DataBaseHandler implements DataBase
+class FileBaseHandler implements DataBase
 {
     private $data, $log, $database;
     public function __construct($database)

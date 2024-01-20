@@ -1,6 +1,6 @@
 <?php
 
-use App\Classes\DataBaseHandler;
+use App\Db\FileBaseHandler;
 
 class LoginModel
 {
@@ -8,7 +8,7 @@ class LoginModel
     {
         $email = htmlspecialchars($email);
         $password = htmlspecialchars($password);
-        $db = new DataBaseHandler('users');
+        $db = new FileBaseHandler('users');
         $users = $db->showAll();
         if (strlen($email) === 0 || strlen($password) === 0) {
             $_SESSION['error'] = 'Empty fields';

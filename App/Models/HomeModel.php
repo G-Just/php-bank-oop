@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use App\Classes\DataBaseHandler;
+use App\Db\FileBaseHandler;
 
 class HomeModel
 {
@@ -11,8 +11,8 @@ class HomeModel
     private $users, $log, $accounts;
     public function __construct()
     {
-        $this->accounts = new DataBaseHandler('data');
-        $this->users = new DataBaseHandler('users');
+        $this->accounts = new FileBaseHandler('data');
+        $this->users = new FileBaseHandler('users');
         $this->log = $this->users->LogShowAll();
     }
     public function getLog(): array

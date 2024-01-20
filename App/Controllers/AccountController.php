@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Classes\DataBaseHandler;
+use App\Db\FileBaseHandler;
 use App\Core\Controller;
 
 class AccountController extends Controller
@@ -10,7 +10,7 @@ class AccountController extends Controller
     private $db;
     public function __construct()
     {
-        $this->db = new DataBaseHandler('data');
+        $this->db = new FileBaseHandler('data');
         if (!isset($_SESSION['id'])) {
             $_SESSION['error'] = 'Login to gain access to all features';
             header('Location: /login');

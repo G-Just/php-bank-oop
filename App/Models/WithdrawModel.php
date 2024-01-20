@@ -1,6 +1,6 @@
 <?php
 
-use App\Classes\DataBaseHandler;
+use App\Db\FileBaseHandler;
 
 class WithdrawModel
 {
@@ -9,7 +9,7 @@ class WithdrawModel
     public function __construct()
     {
         $this->withdraw = $_POST['withdraw'];
-        $this->db = new DataBaseHandler('data');
+        $this->db = new FileBaseHandler('data');
     }
     public function withdraw($accountId)
     {

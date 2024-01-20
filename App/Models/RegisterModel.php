@@ -1,6 +1,6 @@
 <?php
 
-use App\Classes\DataBaseHandler;
+use App\Db\FileBaseHandler;
 
 class RegisterModel
 {
@@ -10,7 +10,7 @@ class RegisterModel
         $email = htmlspecialchars($email);
         $password = htmlspecialchars($password);
         $confirmPassword = htmlspecialchars($confirmPassword);
-        $db = new DataBaseHandler('users');
+        $db = new FileBaseHandler('users');
         $users = $db->showAll();
         if (strlen($email) === 0 || strlen($password) === 0 || strlen($username) === 0) {
             $_SESSION['error'] = 'Empty fields';

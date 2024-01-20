@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Classes;
+namespace app\Db;
 
 interface DataBase
 {
