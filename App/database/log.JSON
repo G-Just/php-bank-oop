@@ -102,5 +102,29 @@
         "accountNumber": "LT009999952124520154",
         "time": "2024 January, 18 @ 12:40",
         "amount": 1
+    },
+    {
+        "user": "Test",
+        "action": "registered",
+        "account": -1,
+        "accountNumber": 0,
+        "time": "2024 January, 21 @ 16:17",
+        "amount": 0
+    },
+    {
+        "user": "Test",
+        "action": "created account",
+        "account": "Test Tester",
+        "accountNumber": "LT009999917634898865",
+        "time": "2024 January, 21 @ 16:18",
+        "amount": 0
+    },
+    {
+        "user": "Test",
+        "action": "deleted account",
+        "account": "Test Tester",
+        "accountNumber": "LT009999917634898865",
+        "time": "2024 January, 21 @ 16:19",
+        "amount": 0
     }
 ]

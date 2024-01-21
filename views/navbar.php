@@ -8,7 +8,7 @@
             </div>
             <div class="flex flex-col items-start w-full gap-6 pl-8 mt-14">
                 <a class="flex gap-4 text-2xl hover:text-teal-600 hover:underline" href=<?= URL . "" ?>><img class="w-7 h-w-7" src=<?= URL . "img/home.svg" ?> alt="">Home</a>
-                <a class="flex gap-4 text-2xl hover:text-teal-600 hover:underline" href=<?= URL . "new" ?>><img class="w-7 h-w-7" src=<?= URL . "img/create.svg" ?> alt="">Create account</a>
+                <a class="flex gap-4 text-2xl hover:text-teal-600 hover:underline" href=<?= URL . "new" ?>><img class="w-7 h-w-7" src=<?= URL . "img/create.svg" ?> alt="">Create Account</a>
                 <a class="flex gap-4 text-2xl hover:text-teal-600 hover:underline" href=<?= URL . "users" ?>><img class="w-7 h-w-7" src=<?= URL . "img/list.svg" ?> alt="">User List</a>
             </div>
         </div>
