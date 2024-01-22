@@ -37,7 +37,7 @@ class RegisterModel
         date_default_timezone_set("Europe/Vilnius");
         $password = password_hash($password, PASSWORD_DEFAULT);
         $db->create(['username' => $username, 'email' => $email, 'role' => 'Operator', 'status' => 'Active', 'created' => date('M d, Y'), 'password' => $password]);
-        $_SESSION['error'] = 'Signed up successfully, try logging in';
+        $_SESSION['message'] = 'Signed up successfully, try logging in';
         header('Location: /login');
         exit();
     }
