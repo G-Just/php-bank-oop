@@ -33,13 +33,17 @@ class DataBaseHandler implements DataBase
     }
     public function update(int $userId, array $userData): void
     {
+        $sql = "UPDATE {$this->table} SET accountName = ?, accountLastName = ?, accountNumber = ?, accountPersonalCode = ?, accountBalance = ? WHERE accountID = ?";
+        $this->pdo->prepare($sql)->execute([$userData['fname'], $userData['lname'], $userData['num'], $userData['code'], $userData['balance'], $userId]);
     }
     public function delete(int $userId): void
     {
+        $sql = "DELETE FROM {$this->table} WHERE accountID = ?";
+        $this->pdo->prepare($sql)->execute([$userId]);
     }
     public function show(int $userId): array
     {
-        $sql = "SELECT * FROM {$this->table} WHERE accountID=?";
+        $sql = "SELECT * FROM {$this->table} WHERE accountID = ?";
         $statement = $this->pdo->prepare($sql);
         $statement->execute([$userId]);
         return $statement->fetch();
@@ -52,6 +56,3 @@ class DataBaseHandler implements DataBase
         }
     }
 }
-$x = new DataBaseHandler('accounts');
-// $x->create(['id' => 0, 'fname' => 'John', 'lname' => 'James', 'num' => 'LT3249i2', 'code' => '38239498', 'balance' => 0]);
-// print_r($x->show(0));
