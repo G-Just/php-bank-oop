@@ -5,6 +5,7 @@ namespace App\Core;
 use App\Controllers\_404Controller;
 use App\Controllers\AccountController;
 use App\Controllers\CreateAccountController;
+use App\Controllers\DBChangeController;
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
 use App\Controllers\RegisterController;
@@ -15,6 +16,7 @@ class Router
 {
     public static function route()
     {
+        isset($_SESSION['db']) ? '' : $_SESSION['db'] = 'file';
         $url = explode('/', filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL));
         array_shift($url);
         $controller = $url[0];
@@ -34,6 +36,7 @@ class Router
         } else {
             $method = $url[1] ?? 'handlePost';
             return match ($controller) {
+                '', 'home' => (new DBChangeController)->$method(...$params),
                 'new' => (new CreateAccountController)->$method(...$params),
                 'login' => (new LoginController)->$method(...$params),
                 'register' => (new RegisterController)->$method(...$params),
