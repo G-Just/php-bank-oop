@@ -28,13 +28,13 @@ class DataBaseHandler implements DataBase
     }
     public function create(array $userData): void
     {
-        $sql = "INSERT INTO {$this->table} (accountID, accountName, accountLastName, accountNumber, accountPersonalCode, accountBalance) VALUES (?, ?, ?, ?, ?, ?)";
-        $this->pdo->prepare($sql)->execute([$userData['id'], $userData['fname'], $userData['lname'], $userData['num'], $userData['code'], $userData['balance']]);
+        $sql = "INSERT INTO {$this->table} (accountID, name, lastName, number, code, balance) VALUES (?, ?, ?, ?, ?, ?)";
+        $this->pdo->prepare($sql)->execute([$userData['id'], $userData['name'], $userData['lastName'], $userData['number'], $userData['code'], $userData['balance']]);
     }
     public function update(int $userId, array $userData): void
     {
-        $sql = "UPDATE {$this->table} SET accountName = ?, accountLastName = ?, accountNumber = ?, accountPersonalCode = ?, accountBalance = ? WHERE accountID = ?";
-        $this->pdo->prepare($sql)->execute([$userData['fname'], $userData['lname'], $userData['num'], $userData['code'], $userData['balance'], $userId]);
+        $sql = "UPDATE {$this->table} SET name = ?, lastName = ?, number = ?, code = ?, balance = ? WHERE accountID = ?";
+        $this->pdo->prepare($sql)->execute([$userData['name'], $userData['lastName'], $userData['number'], $userData['code'], $userData['balance'], $userId]);
     }
     public function delete(int $userId): void
     {
@@ -49,10 +49,9 @@ class DataBaseHandler implements DataBase
         return $statement->fetch();
     }
     public function showAll(): array
-    { {
-            $sql = "SELECT * FROM {$this->table}";
-            $statement = $this->pdo->query($sql);
-            return $statement->fetchAll();
-        }
+    {
+        $sql = "SELECT * FROM {$this->table}";
+        $statement = $this->pdo->query($sql);
+        return $statement->fetchAll();
     }
 }
