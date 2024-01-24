@@ -1,17 +1,22 @@
 <?php
 
+use App\Db\DataBaseHandler;
 use App\Db\FileBaseHandler;
 
 class RegisterModel
 {
+    private $db;
+    public function __construct($medium)
+    {
+        $medium === 'file' ? $this->db = new FileBaseHandler('users') : $this->db = new DataBaseHandler('users');
+    }
     public function validate($username, $email, $password, $confirmPassword)
     {
         $username = htmlspecialchars($username);
         $email = htmlspecialchars($email);
         $password = htmlspecialchars($password);
         $confirmPassword = htmlspecialchars($confirmPassword);
-        $db = new FileBaseHandler('users');
-        $users = $db->showAll();
+        $users = $this->db->showAll();
         if (strlen($email) === 0 || strlen($password) === 0 || strlen($username) === 0) {
             $_SESSION['error'] = 'Empty fields';
             header('Location: /register');
@@ -36,7 +41,7 @@ class RegisterModel
         }
         date_default_timezone_set("Europe/Vilnius");
         $password = password_hash($password, PASSWORD_DEFAULT);
-        $db->create(['username' => $username, 'email' => $email, 'role' => 'Operator', 'status' => 'Active', 'created' => date('M d, Y'), 'password' => $password]);
+        $this->db->create(['username' => $username, 'email' => $email, 'userRole' => 'Operator', 'userStatus' => 'Active', 'created' => date('M d, Y'), 'userPassword' => $password]);
         $_SESSION['message'] = 'Signed up successfully, try logging in';
         header('Location: /login');
         exit();

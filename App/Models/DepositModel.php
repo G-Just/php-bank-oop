@@ -10,7 +10,7 @@ class DepositModel
     public function __construct($medium)
     {
         $this->deposit = $_POST['deposit'];
-        $medium === 'file' ? $this->db = new FileBaseHandler('accounts') : $this->db = new DataBaseHandler('accounts');
+        $medium === 'file' ? $this->db = new FileBaseHandler('data') : $this->db = new DataBaseHandler('accounts');
     }
     public function deposit($accountId)
     {

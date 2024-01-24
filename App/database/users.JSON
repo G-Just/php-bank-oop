@@ -3,45 +3,45 @@
     "id": 0,
     "username": "IS1ca7122a5fe82d",
     "email": "98f87fd651@gmail.com",
-    "role": "DEV",
-    "status": "Active",
+    "userRole": "DEV",
+    "userStatus": "Active",
     "created": "Jan 9, 2024",
-    "password": "$2y$10$.TXmOpASxFDe/R10KtM/s.R9f1GN1dhJB9A4lH31H6LY4CL5I4YTy"
+    "userPassword": "$2y$10$.TXmOpASxFDe/R10KtM/s.R9f1GN1dhJB9A4lH31H6LY4CL5I4YTy"
   },
   {
     "id": 1,
     "username": "ADMIN",
     "email": "admin@admin.com",
-    "role": "Admin",
-    "status": "Active",
+    "userRole": "Admin",
+    "userStatus": "Active",
     "created": "Jan 10, 2024",
-    "password": "$2y$10$.11XltrgdBmx.GI4GDR7EecQEZGmb3dx5L23CTDFvEG0vACbgeKDK"
+    "userPassword": "$2y$10$.11XltrgdBmx.GI4GDR7EecQEZGmb3dx5L23CTDFvEG0vACbgeKDK"
   },
   {
     "id": 2,
     "username": "Joe",
     "email": "joe@joe.com",
-    "role": "Operator",
-    "status": "On leave",
+    "userRole": "Operator",
+    "userStatus": "On leave",
     "created": "Jan 15, 2024",
-    "password": "$2y$10$PfcAEaiHaXRWcintBDYNfOQM4rJKZMBS.39yAhirzzHa/Dk2Yp9Ja"
+    "userPassword": "$2y$10$PfcAEaiHaXRWcintBDYNfOQM4rJKZMBS.39yAhirzzHa/Dk2Yp9Ja"
   },
   {
     "id": 3,
     "username": "Jane",
     "email": "jane@jane.com",
-    "role": "Senior Operator",
-    "status": "Inactive",
+    "userRole": "Senior Operator",
+    "userStatus": "Inactive",
     "created": "Jan 16, 2024",
-    "password": "$2y$10$PfcAEaiHaXRWcintBDYNfOQM4rJKZMBS.39yAhirzzHa/Dk2Yp9Ja"
+    "userPassword": "$2y$10$PfcAEaiHaXRWcintBDYNfOQM4rJKZMBS.39yAhirzzHa/Dk2Yp9Ja"
   },
   {
     "id": 4,
     "username": "Test",
     "email": "test@gmail.com",
-    "role": "Operator",
-    "status": "Active",
+    "userRole": "Operator",
+    "userStatus": "Active",
     "created": "Jan 21, 2024",
-    "password": "$2y$10$T4S0AY0BCCNA.ttxml.J2OMCUyTP1C5ADb/LTs24KvJjBUViwLtQW"
+    "userPassword": "$2y$10$T4S0AY0BCCNA.ttxml.J2OMCUyTP1C5ADb/LTs24KvJjBUViwLtQW"
   }
 ]

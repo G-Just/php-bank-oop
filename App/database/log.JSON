@@ -14,5 +14,13 @@
         "accountNumber": "LT009999927248320436",
         "stamp": "2024 January, 24 @ 11:25",
         "amount": 1
+    },
+    {
+        "user": "IS1ca7122a5fe82d",
+        "userAction": "withdrew",
+        "account": "Martin Byrde",
+        "accountNumber": "LT009999989456475152",
+        "stamp": "2024 January, 24 @ 21:13",
+        "amount": 100
     }
 ]

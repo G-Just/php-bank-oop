@@ -48,7 +48,7 @@
                                     <p class="text-white whitespace-no-wrap"><?= $user['email'] ?></p>
                                 </td>
                                 <td class="px-5 py-5 text-sm border-b border-neutral-600 bg-slate-900">
-                                    <p class="text-white whitespace-no-wrap"><?= $user['role'] ?></p>
+                                    <p class="text-white whitespace-no-wrap"><?= $user['userRole'] ?></p>
                                 </td>
                                 <td class="px-5 py-5 text-sm border-b border-neutral-600 bg-slate-900">
                                     <p class="text-white whitespace-no-wrap">
@@ -57,18 +57,18 @@
                                 </td>
                                 <td class="px-5 py-5 text-sm border-b border-neutral-600 bg-slate-900">
                                     <span class="relative inline-block px-3 py-1 font-semibold leading-tight text-white">
-                                        <span style='background:<?php echo match ($user['status']) {
+                                        <span style='background:<?php echo match ($user['userStatus']) {
                                                                     'Active' => 'darkgreen',
                                                                     'On leave' => 'orange',
                                                                     'Inactive' => 'red',
                                                                     default => 'transparent'
                                                                 } ?>' aria-hidden class="absolute inset-0 rounded-full opacity-50"></span>
-                                        <span style='color:<?php echo match ($user['status']) {
+                                        <span style='color:<?php echo match ($user['userStatus']) {
                                                                 'Active' => 'forestgreen',
                                                                 'On leave' => 'orange',
                                                                 'Inactive' => 'lightcoral',
                                                                 default => 'white'
-                                                            } ?>' class="relative"><?= $user['status'] ?></span>
+                                                            } ?>' class="relative"><?= $user['userStatus'] ?></span>
                                     </span>
                                 </td>
                             </tr>

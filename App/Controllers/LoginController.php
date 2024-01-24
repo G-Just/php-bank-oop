@@ -16,6 +16,6 @@ class LoginController extends Controller
     }
     public function handlePost()
     {
-        return $this->model('LoginModel', '')->validate($_POST['email'], $_POST['password']);
+        return $this->model('LoginModel', $_SESSION['db'])->validate($_POST['email'], $_POST['password']);
     }
 }

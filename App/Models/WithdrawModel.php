@@ -10,7 +10,7 @@ class WithdrawModel
     public function __construct($medium)
     {
         $this->withdraw = $_POST['withdraw'];
-        $medium === 'file' ? $this->db = new FileBaseHandler('accounts') : $this->db = new DataBaseHandler('accounts');
+        $medium === 'file' ? $this->db = new FileBaseHandler('data') : $this->db = new DataBaseHandler('accounts');
     }
     public function withdraw($accountId)
     {

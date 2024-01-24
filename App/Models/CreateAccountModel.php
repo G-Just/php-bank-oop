@@ -9,7 +9,7 @@ class CreateAccountModel
     private $db;
     public function __construct($medium)
     {
-        $medium === 'file' ? $this->db = new FileBaseHandler('accounts') : $this->db = new DataBaseHandler('accounts');
+        $medium === 'file' ? $this->db = new FileBaseHandler('data') : $this->db = new DataBaseHandler('accounts');
         $this->number = $this->generateNumber();
     }
     public function validate($name, $lastName, $code)

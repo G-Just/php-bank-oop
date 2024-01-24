@@ -28,15 +28,19 @@ class DataBaseHandler implements DataBase
     }
     public function create(array $userData): void
     {
-        $sql = "INSERT INTO {$this->table} (firstName, lastName, IBAN, code, balance) VALUES (?, ?, ?, ?, ?)";
-        $this->pdo->prepare($sql)->execute([$userData['firstName'], $userData['lastName'], $userData['IBAN'], $userData['code'], $userData['balance']]);
-
-        $sql = "INSERT INTO log (user, userAction, account, accountNumber, stamp, amount) VALUES (?, ?, ?, ?, ?, ?)";
-        date_default_timezone_set("Europe/Vilnius");
-        if (isset($_SESSION['id'])) {
-            $this->pdo->prepare($sql)->execute([$_SESSION['username'], 'created account', $userData['name'] . ' ' . $userData['lastName'],  $userData['IBAN'], date('Y F, d @ H:i'), 0]);
+        if ($this->table === 'accounts') {
+            $sql = "INSERT INTO {$this->table} (firstName, lastName, IBAN, code, balance) VALUES (?, ?, ?, ?, ?)";
+            $this->pdo->prepare($sql)->execute([$userData['firstName'], $userData['lastName'], $userData['IBAN'], $userData['code'], $userData['balance']]);
+            $sql = "INSERT INTO log (user, userAction, account, accountNumber, stamp, amount) VALUES (?, ?, ?, ?, ?, ?)";
+            date_default_timezone_set("Europe/Vilnius");
+            if (isset($_SESSION['id'])) {
+                $this->pdo->prepare($sql)->execute([$_SESSION['username'], 'created account', $userData['name'] . ' ' . $userData['lastName'],  $userData['IBAN'], date('Y F, d @ H:i'), 0]);
+            } else {
+                $this->pdo->prepare($sql)->execute([$userData['firstName'], 'registered', '-1',  0, date('Y F, d @ H:i'), 0]);
+            }
         } else {
-            $this->pdo->prepare($sql)->execute([$userData['firstName'], 'registered', '-1',  0, date('Y F, d @ H:i'), 0]);
+            $sql = "INSERT INTO {$this->table} (username, email, userRole, userStatus, created, userPassword) VALUES (?, ?, ?, ?, ?, ?)";
+            $this->pdo->prepare($sql)->execute([$userData['username'], $userData['email'], $userData['role'], $userData['status'], $userData['created'], $userData['password']]);
         }
     }
     public function update(int $userId, array $userData): void
