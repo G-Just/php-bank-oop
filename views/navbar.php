@@ -26,7 +26,7 @@
                     </div>
                     <div class="flex w-full justify-evenly">
                         <p class="font-bold <?= $_SESSION['db'] === 'file' ? 'text-teal-600' : '' ?>">File</p>
-                        <form action="/home" method="POST" id='dbToggle'>
+                        <form action="/" method="POST" id='dbToggle'>
                             <label class="relative inline-flex items-center cursor-pointer" onclick="document.getElementById('dbToggle').submit()">
                                 <input id="switch-3" type="checkbox" class="sr-only peer" <?= $_SESSION['db'] === 'database' ? 'checked' : '' ?> />
                                 <label for="switch-3" class="hidden"></label>

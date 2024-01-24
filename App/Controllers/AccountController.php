@@ -36,13 +36,13 @@ class AccountController extends Controller
     }
     public function handleDeposit($accountId)
     {
-        return $this->model('DepositModel', '')->deposit($accountId);
+        return $this->model('DepositModel', $_SESSION['db'])->deposit($accountId);
     }
     public function handleWithdrawal($accountId)
     {
-        return $this->model('WithdrawModel', '')->withdraw($accountId);
+        return $this->model('WithdrawModel', $_SESSION['db'])->withdraw($accountId);
     }
-    public function handleDelete($accountId)
+    public function handleDelete(int $accountId)
     {
         if ($this->db->show($accountId)['balance'] === 0) {
             $this->db->delete($accountId);

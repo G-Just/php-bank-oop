@@ -1,14 +1,15 @@
 <?php
 
+use App\Db\DataBaseHandler;
 use App\Db\FileBaseHandler;
 
 class CreateAccountModel
 {
     public $number;
     private $db;
-    public function __construct()
+    public function __construct($medium)
     {
-        $this->db = new FileBaseHandler('data');
+        $medium === 'file' ? $this->db = new FileBaseHandler('accounts') : $this->db = new DataBaseHandler('accounts');
         $this->number = $this->generateNumber();
     }
     public function validate($name, $lastName, $code)
@@ -29,7 +30,7 @@ class CreateAccountModel
         if (!$this->duplicateCheck($code)) {
             return header('Location: /new');
         }
-        $this->db->create(['name' => $name, 'lastName' => $lastName, 'number' => $this->number, 'personalCode' => $code, 'balance' => 0]);
+        $this->db->create(['firstName' => $name, 'lastName' => $lastName, 'IBAN' => $this->number, 'code' => $code, 'balance' => 0]);
         $_SESSION['globalMessage'] = 'New account created successfully';
         return header('Location: /');
     }

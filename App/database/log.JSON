@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "user": "IS1ca7122a5fe82d",
+        "userAction": "deposited",
+        "account": "John Doe",
+        "accountNumber": "LT009999995641657718",
+        "stamp": "2024 January, 24 @ 11:07",
+        "amount": 10
+    },
+    {
+        "user": "IS1ca7122a5fe82d",
+        "userAction": "deposited",
+        "account": "Dexter Morgan",
+        "accountNumber": "LT009999927248320436",
+        "stamp": "2024 January, 24 @ 11:25",
+        "amount": 1
+    }
+]

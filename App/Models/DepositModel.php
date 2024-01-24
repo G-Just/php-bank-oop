@@ -1,15 +1,16 @@
 <?php
 
+use App\Db\DataBaseHandler;
 use App\Db\FileBaseHandler;
 
 class DepositModel
 {
     private $deposit;
     private $db;
-    public function __construct()
+    public function __construct($medium)
     {
         $this->deposit = $_POST['deposit'];
-        $this->db = new FileBaseHandler('data');
+        $medium === 'file' ? $this->db = new FileBaseHandler('accounts') : $this->db = new DataBaseHandler('accounts');
     }
     public function deposit($accountId)
     {

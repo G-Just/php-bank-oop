@@ -9,7 +9,7 @@ class CreateAccountController extends Controller
     public function index()
     {
         if (isset($_SESSION['id'])) {
-            $number = $this->model('CreateAccountModel', '')->number;
+            $number = $this->model('CreateAccountModel', $_SESSION['db'])->number;
             return $this->view('newAccount', ['number' => $number, 'error' => $_SESSION['error'] ?? '']);
         } else {
             $_SESSION['error'] = 'Login to gain access to all features';

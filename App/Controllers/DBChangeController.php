@@ -9,6 +9,6 @@ class DBChangeController extends Controller
     public function handlePost()
     {
         $_SESSION['db'] === 'file' ? $_SESSION['db'] = 'database' : $_SESSION['db'] = 'file';
-        header('Location: /');
+        header('Location: /logout');
     }
 }

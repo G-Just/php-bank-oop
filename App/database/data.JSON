@@ -5,7 +5,7 @@
         "lastName": "Doe",
         "IBAN": "LT009999995641657718",
         "code": "94723842328",
-        "balance": 250
+        "balance": 261
     },
     {
         "id": 1,
@@ -13,7 +13,7 @@
         "lastName": "Byrde",
         "IBAN": "LT009999989456475152",
         "code": "38745382828",
-        "balance": 419.95
+        "balance": 420.95
     },
     {
         "id": 2,
@@ -45,7 +45,7 @@
         "lastName": "Morgan",
         "IBAN": "LT009999927248320436",
         "code": "18205101224",
-        "balance": 6500.58
+        "balance": 6501.58
     },
     {
         "id": 6,

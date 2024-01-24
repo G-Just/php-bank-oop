@@ -25,12 +25,12 @@ class HomeModel
                     'deposited' => "deposited <span class='font-bold text-teal-600'>$" . $entry['amount'] . '</span> into account',
                     'withdrew' => "withdrew <span class='font-bold text-teal-600'>$" . $entry['amount'] . '</span> from account',
                     'registered' => "signed up, <br> and is the newest user <span class='font-bold text-teal-600'>Say Hi 👋</span>",
-                    default => $entry['action']
+                    default => $entry['userAction']
                 },
-                'account' => $entry['account'] === -1 ? '' : $entry['accountNumber'],
+                'account' => $entry['accountNumber'] === -1 ? '' : $entry['accountNumber'],
                 'name' => $entry['account'] === -1 ? '' : "<span class='font-normal text-white'>for</span> " . $entry['account'],
                 'time' => $entry['stamp'],
-                'image' => match ($entry['action']) {
+                'image' => match ($entry['userAction']) {
                     'deposited' => 'deposit.svg',
                     'withdrew' => 'withdraw.svg',
                     'registered' => 'newUser.svg',

@@ -1,15 +1,16 @@
 <?php
 
+use App\Db\DataBaseHandler;
 use App\Db\FileBaseHandler;
 
 class WithdrawModel
 {
     private $withdraw;
     private $db;
-    public function __construct()
+    public function __construct($medium)
     {
         $this->withdraw = $_POST['withdraw'];
-        $this->db = new FileBaseHandler('data');
+        $medium === 'file' ? $this->db = new FileBaseHandler('accounts') : $this->db = new DataBaseHandler('accounts');
     }
     public function withdraw($accountId)
     {
