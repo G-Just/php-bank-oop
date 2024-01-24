@@ -80,7 +80,7 @@ class CreateAccountModel
             $number = $number . (string)rand(0, 9);
         }
         foreach ($this->db->showAll() as $account) {
-            if ($number === substr($account['number'], 9)) {
+            if ($number === substr($account['IBAN'], 9)) {
                 return $this->generateNumber();
             }
         }

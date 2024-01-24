@@ -28,17 +28,17 @@
                                         <div class="flex items-center">
                                             <div>
                                                 <p class="whitespace-no-wrap ">
-                                                    <?= $user['lastName'] . ' ' . $user['name'] ?>
+                                                    <?= $user['lastName'] . ' ' . $user['firstName'] ?>
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="px-5 py-5 text-lg border-b border-neutral-600x">
-                                        <p class="text-left whitespace-no-wrap "><?= $user['personalCode'] ?></p>
+                                        <p class="text-left whitespace-no-wrap "><?= $user['code'] ?></p>
                                     </td>
                                     <td class="px-5 py-5 text-lg border-b border-neutral-600x">
                                         <p class="text-left whitespace-no-wrap ">
-                                            <?= $user['number'] ?>
+                                            <?= $user['IBAN'] ?>
                                         </p>
                                     </td>
                                     <td class="px-5 py-5 text-lg border-b border-neutral-600x">

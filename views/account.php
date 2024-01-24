@@ -6,12 +6,12 @@
             <div class="w-full h-full grid grid-cols-2 grid-rows-10 p-4 gap-4 bg-[url('/../img/bg_pattern.jpg')] bg-cover">
                 <div class="flex justify-between col-span-2 row-span-2 p-10 rounded-lg shadow-lg bg-slate-800">
                     <div class="flex flex-col gap-3">
-                        <h1 class="text-5xl"><?= $data['account']['name'] . ' ' . $data['account']['lastName'] ?></h1>
-                        <p class="tracking-widest text-teal-600"><?= $data['account']['personalCode'] ?></p>
+                        <h1 class="text-5xl"><?= $data['account']['firstName'] . ' ' . $data['account']['lastName'] ?></h1>
+                        <p class="tracking-widest text-teal-600"><?= $data['account']['code'] ?></p>
                     </div>
                     <div>
                         <h1>
-                            <p class="text-4xl tracking-widest"><?= $data['account']['number'] ?></p>
+                            <p class="text-4xl tracking-widest"><?= $data['account']['IBAN'] ?></p>
                             <p>&nbsp</p>
                         </h1>
                     </div>

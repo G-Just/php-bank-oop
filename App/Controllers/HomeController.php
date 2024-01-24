@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $model = $this->model('HomeModel');
+        $model = $this->model('HomeModel', $_SESSION['db']);
         $accounts = $model->getAccounts();
         $log = array_reverse($model->getLog());
         $stats = $model->getStats();

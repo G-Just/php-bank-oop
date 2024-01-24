@@ -4,13 +4,14 @@ namespace App\Controllers;
 
 use App\Db\FileBaseHandler;
 use App\Core\Controller;
+use App\Db\DataBaseHandler;
 
 class AccountController extends Controller
 {
     private $db;
-    public function __construct()
+    public function __construct($medium)
     {
-        $this->db = new FileBaseHandler('data');
+        $medium === 'file' ? $this->db = new FileBaseHandler('data') : $this->db = new DataBaseHandler('accounts');
         if (!isset($_SESSION['id'])) {
             $_SESSION['error'] = 'Login to gain access to all features';
             header('Location: /login');
@@ -35,11 +36,11 @@ class AccountController extends Controller
     }
     public function handleDeposit($accountId)
     {
-        return $this->model('DepositModel')->deposit($accountId);
+        return $this->model('DepositModel', '')->deposit($accountId);
     }
     public function handleWithdrawal($accountId)
     {
-        return $this->model('WithdrawModel')->withdraw($accountId);
+        return $this->model('WithdrawModel', '')->withdraw($accountId);
     }
     public function handleDelete($accountId)
     {

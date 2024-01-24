@@ -21,6 +21,7 @@ class Router
         array_shift($url);
         $controller = $url[0];
         $method = $url[1] ?? 'index';
+        $medium = $_SESSION['db'];
         $params = array_slice($url, 2) ?? [];
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             return match ($controller) {
@@ -30,7 +31,7 @@ class Router
                 'register' => (new RegisterController)->$method(...$params),
                 'logout' => (new SignOutController)->$method(...$params),
                 'users' => (new UserListController)->$method(...$params),
-                'account' => (new AccountController)->$method(...$params),
+                'account' => (new AccountController($medium))->$method(...$params),
                 default => (new _404Controller)->$method(...$params)
             };
         } else {
@@ -40,7 +41,7 @@ class Router
                 'new' => (new CreateAccountController)->$method(...$params),
                 'login' => (new LoginController)->$method(...$params),
                 'register' => (new RegisterController)->$method(...$params),
-                'account' => (new AccountController)->$method(...$params),
+                'account' => (new AccountController($medium))->$method(...$params),
                 default => (new _404Controller)->$method(...$params)
             };
         }

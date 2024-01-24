@@ -4,10 +4,10 @@ namespace App\Core;
 
 class Controller
 {
-    protected function model($model)
+    protected function model($model, $param)
     {
         require __DIR__ . "/../Models/$model.php";
-        return new $model();
+        return new $model($param);
     }
     protected function view($view, $data = [])
     {

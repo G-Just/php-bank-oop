@@ -16,6 +16,6 @@ class RegisterController extends Controller
     }
     public function handlePost()
     {
-        return $this->model('RegisterModel')->validate($_POST['username'], $_POST['email'], $_POST['password'], $_POST['confirmPassword']);
+        return $this->model('RegisterModel', '')->validate($_POST['username'], $_POST['email'], $_POST['password'], $_POST['confirmPassword']);
     }
 }
