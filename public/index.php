@@ -6,9 +6,6 @@ use App\Core\Router;
 
 require __DIR__ . '/../vendor/autoload.php';
 define('ROOT', __DIR__ . '/../');
-define('URL', 'http://bank.local/');
+define('URL', 'http://phpbank.local/');
 
 echo Router::route();
-
-
-// TODO: Do the database user portion, so that the users are pulled from the database and not the file
