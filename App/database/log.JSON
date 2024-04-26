@@ -22,5 +22,13 @@
         "accountNumber": "LT009999989456475152",
         "stamp": "2024 January, 24 @ 21:13",
         "amount": 100
+    },
+    {
+        "user": "IS1ca7122a5fe82d",
+        "userAction": "deposited",
+        "account": "Franklin Saint",
+        "accountNumber": "LT009999912238558719",
+        "stamp": "2024 April, 26 @ 17:36",
+        "amount": 1
     }
 ]
